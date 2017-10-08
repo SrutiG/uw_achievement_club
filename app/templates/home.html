@@ -1,6 +1,61 @@
 {% extends 'layout.html' %}
 {% block content %}
-<div>
-    <h1>Home</h1>
+<div class="jumbotron main">
+</div>
+<div class="uw-logo">
+
+</div>
+<div class="uw-logo-img text-center">
+    <div>
+        <img src="{{ url_for('static', filename='images/uw_logo.png') }}" height="90">
+    </div>
+    <div>
+        <h1 class="logo-header"><strong>Achievement Club</strong></h1>
+    </div>
+
+</div>
+<div class="jumbotron home-about text-center">
+    <div class="container">
+        <h2>The Achievement Club is built on the premise of empowering families to achieve their own goals.</h2>
+        <div class="">
+            <img src="{{ url_for('static', filename='images/about_img.png') }}">
+        </div>
+        <h2 class="about-header-2">Our approach is unique because it promotes family accountability and encourages a cycle of giving back with a two-generation approach.</h2>
+        <div class="">
+            <button class="btn btn-lg btn-default uw_button" type="button">LEARN MORE</button>
+        </div>
+    </div>
+</div>
+<div class="jumbotron home-success">
+    <div class="container">
+        <div class="text-center success-header">
+            <h2>Take a look at some of our <strong>Success Stories</strong></h2>
+        </div>
+
+        <div class="col-md-12 container success-story">
+            <div class="col-md-3 succes-item">
+                <img src="{{ url_for('static', filename='images/ss_melissa_wardley.png') }}" height="200">
+            </div>
+            <div class="col-md-9 success-item">
+                <h3>Melissa Wardley</h3>
+                <h4>Melissa Wardley is a busy mother. She was experiencing caregiver’s stress and burnout, and lost touch with her own goals. She joined the Achievement Club to pursue her goal of starting a small business, Wardley’s Crafty Candies, and now it’s a reality. She’s even holding her first event at the end of the month to do market research and tasting.
+
+                    “We’re happy Melissa is starting a business..., just a few months ago, the idea of that would have seemed out of reach for her.” –Terri Richardson, Melissa’s coach from Achievement Club.
+                </h4>
+            </div>
+        </div>
+        <div class="col-md-12 container success-story">
+            <div class="col-md-9">
+                <h3 class="">Jimmie Gray</h3>
+                <h4 class="">Jimmie is a veteran of the US Army, and dealt with housing and financial hardship after being discharged. However, after working with the United Way Vets Connect program and Achievement Club, he found new housing and worked successfully towards his goals. In his free time, Jimmie volunteers with United Way. He loves telling his story of triumph and would like for people to know, “Don’t be selfish and always be concerned about other people’s needs.”</h4>
+            </div>
+            <div class="col-md-3">
+                <img src="{{ url_for('static', filename='images/ss_jimmie_gray.png') }}" height="200" style="float:right;">
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-lg btn-default uw_button_inverse">SEE MORE</button>
+        </div>
+    </div>
 </div>
 {% endblock %}

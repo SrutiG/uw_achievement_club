@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='css/index.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Enriqueta" rel="stylesheet">
 
     {% block extrastyle %} {% endblock %}
 
@@ -30,6 +31,17 @@
 {% endif %}
 {% endwith %}
 <body {% block class %} {%endblock %}>
+<nav class="navbar navbar-inverse bg-inverse fixed-top">
+    <div class="col-md-6 col-md-offset-3 text-center nav-items">
+        <ul class="list-unstyled list-inline">
+            <li class="col-md-3"><a class="nav-item active" href="#">HOME</a></li>
+            <li class="col-md-3"><a class="nav-item" href="#">ABOUT</a></li>
+            <li class="col-md-3"><a class="nav-item" href="#">RESOURCES</a></li>
+            <li class="col-md-3"><a class="nav-item" href="#">CONTACT</a></li>
+        </ul>
+    </div>
+
+</nav>
 {% block content %}
 {% endblock %}
 </body>
