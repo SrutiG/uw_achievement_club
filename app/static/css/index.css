@@ -1,0 +1,122 @@
+:root {
+    --uw_blue: #101B7B;
+    --uw_red: #FF001C;
+    --uw_orange: #FF9A36;
+    --uw_lavender: #767DAC;
+    --uw_white: #FEF9FF;
+    --primary_dark: #212121;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* navbar */
+.navbar {
+    min-height: 40px ! important;
+    height: 40px ! important;
+    background-color: var(--uw_blue);
+    border-radius: 0px;
+    margin-bottom: 0 ! important;
+    padding-bottom: 0 ! important;
+}
+
+.nav-items {
+    margin-top: 8px;
+}
+
+.nav-item:not(.active) {
+    color: var(--uw_white);
+}
+
+.active, .nav-item:hover {
+    color: var(--uw_orange) ! important;
+    border-bottom: 1px solid var(--uw_orange);
+    text-decoration: none;
+}
+
+/*home page*/
+.main {
+    position: relative;
+    background-image: url(../images/homepage-photo.png);
+    height: 60vh;
+    margin-top: 0 ! important;
+    padding-top: 0 ! important;
+    margin-bottom: 0;
+
+}
+
+.uw-logo {
+    position: absolute;
+    background-color: var(--primary_dark);
+    height: 60vh;
+    width: 100vw;
+    top: 40px;
+    opacity: 0.5;
+}
+
+.uw-logo-img {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo-header {
+    color: var(--uw_white);
+    font-family: 'Enriqueta', serif;
+}
+
+/*home page- about*/
+
+.home-about {
+    background-color: white;
+    color: var(--uw_blue);
+    margin-top: 0;
+}
+
+/*home page-success*/
+
+.home-success {
+    background-color: var(--uw_blue);
+    color: var(--uw_white);
+}
+
+.success-header {
+    margin-bottom: 50px;
+    color: var(--uw_orange);
+}
+
+.success-story {
+    height: 200px;
+    margin-bottom: 25px;
+}
+
+.success-item {
+}
+/*general*/
+
+.uw_button {
+    color: var(--uw_blue);
+    border: 1px solid var(--uw_blue);
+    background-color: white;
+    margin-top: 20px;
+}
+
+.uw_button:hover {
+    color: var(--uw_orange);
+    border: 1px solid var(--uw_orange);
+    background-color: white;
+}
+
+.uw_button_inverse {
+    color: white;
+    border: 1px solid white;
+    background-color: var(--uw_blue);
+}
+
+.uw_button_inverse:hover {
+    color: var(--uw_orange);
+    border: 1px solid var(--uw_orange);
+    background-color: var(--uw_blue);
+}

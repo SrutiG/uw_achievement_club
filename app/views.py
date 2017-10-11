@@ -5,4 +5,8 @@ import json
 
 @app.route('/')
 def index():
-	return '<h1>Hello World!</h1>'
+	return redirect('home')
+
+@app.route('/home')
+def home():
+	return render_template('home.html')
