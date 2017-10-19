@@ -45,7 +45,7 @@ body {
 .main {
     position: relative;
     background-image: url(../images/uw_home_bkgrd.png);
-    background-size: 110% 100%;
+    background-size: 120% 100%;
     background-position: center;
     height: 90vh;
     width: 100vw;
