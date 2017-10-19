@@ -1,5 +1,28 @@
 {% extends 'layout.html' %}
 {% block content %}
+<div class="jumbotron about">
+    <h1 class="text-center">ABOUT</h1>
+    <div class="container">
+        <h2>The Achievement Club is built on the premise of empowering families to achieve their own goals.</h2>
+        <div class="text-center">
+            <img src="{{ url_for('static', filename='images/about_img.png') }}">
+        </div>
+        <br>
+        <p>Our model focuses on two major concepts: <strong>peer support</strong> (nudge) and <strong>conditional cash transfers</strong> (incentives) for meeting goals. Participants join a group of neighbors to set goals for improvement. Over a series of six months, SMART goals are broken down into achievable steps. Through the support of the group and group coach they meet their goals, step by step. Each step along the way gives a cash reward. Over the course of multiple months, those steps add up to real change in participants’ lives and their communities. Members' <strong>success is rooted in free will</strong>, empowering families to take control of their lives by achieving goals with the support network of their neighbors.<br><br>
 
+            ​
+
+            Achievement Club adds to this model by providing coaching support, as well as providing a <strong>“Goals Library”</strong> of pre-established steps to success which have worked for past participants. This Library builds over time so that new participants can learn from peer and alumni experience. The Clubs are also connected to other resources like <strong>financial coaches and employment counselors</strong> if the families choose goals that need that support.<br><br>
+
+            ​
+
+            The clubs have been inspired by the models implemented by the Family Independence Initiative (FII), an award winning cost-effective method which is now being implemented in Oakland, Detroit, Boston, New Orleans and other cities. The founder of FII, Maurice Miller is a MacArthur Fellow and is gaining national recognition for his work with families. The model is based on families taking control of their own progress.<br></p>
+        <h3>Our approach is unique because it promotes family accountability and encourages a cycle of giving back with a two-generation approach.</h3>
+        <br>
+        <div class="text-center">
+            <img src="{{ url_for('static', filename='images/about_img_2.png') }}">
+        </div>
+    </div>
+</div>
 
 {% endblock %}
