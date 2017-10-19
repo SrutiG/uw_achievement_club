@@ -45,9 +45,9 @@ body {
 .main {
     position: relative;
     background-image: url(../images/uw_home_bkgrd.png);
-    background-size: 100% 100%;
+    background-size: 110% 100%;
     background-position: center;
-    height: 75vh;
+    height: 90vh;
     width: 100vw;
     margin-top: 0 ! important;
     padding-top: 0 ! important;
@@ -58,7 +58,7 @@ body {
 .uw-logo {
     position: absolute;
     background-color: var(--primary_dark);
-    height: 75vh;
+    height: 90vh;
     width: 100vw;
     top: 0px;
     opacity: 0.6;
@@ -66,7 +66,7 @@ body {
 
 .uw-logo-img {
     position: absolute;
-    top: 25vh;
+    top: 35vh;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -97,7 +97,7 @@ body {
 .home-about {
     position: absolute;
     background-color: transparent;
-    top: 75vh;
+    top: 90vh;
     width: 100vw;
     left: 50%;
     transform: translateX(-50%);
