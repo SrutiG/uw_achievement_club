@@ -14,18 +14,40 @@
     </div>
 
 </div>
-<div class="jumbotron home-about text-center">
-    <div class="container">
-        <h2>The Achievement Club is built on the premise of empowering families to achieve their own goals.</h2>
-        <div class="">
-            <img src="{{ url_for('static', filename='images/about_img.png') }}">
-        </div>
-        <h2 class="about-header-2">Our approach is unique because it promotes family accountability and encourages a cycle of giving back with a two-generation approach.</h2>
-        <div class="">
-            <button class="btn btn-lg btn-default uw_button" type="button">LEARN MORE</button>
-        </div>
+<div class="home-about-bkgrd">
+    <div class="home-about-fade">
+
+
     </div>
 </div>
+<div class="jumbotron home-about text-center">
+    <h1><strong>Our Mission</strong></h1>
+    <h2>Empower families to achieve their own goals</h2>
+    <div class="col-md-12 circles">
+        <div class="col-md-4">
+            <div class="circle container">
+                <img class="circle-img" src="{{ url_for('static', filename='images/hold.png') }}">
+            </div>
+            <h3 class="circle-text">receive <strong>peer support</strong> from neighbors to reach goals</h3>
+        </div>
+        <div class="col-md-4">
+            <div class="circle container">
+                <img class="circle-img" src="{{ url_for('static', filename='images/paper-plane.png') }}">
+            </div>
+            <h3 class="circle-text">encourage <strong>free will</strong> for families to take control of their lives</h3>
+        </div>
+        <div class="col-md-4">
+            <div class="circle container">
+                <img class="circle-img" src="{{ url_for('static', filename='images/flag.png') }}">
+            </div>
+            <h3 class="circle-text">find <strong>success</strong> by achieving goals and enriching communities</h3>
+        </div>
+    </div>
+    <div>
+        <button class="uw_button btn btn-lg btn-default">LEARN MORE</button>
+    </div>
+</div>
+
 <div class="jumbotron home-success">
     <div class="container">
         <div class="text-center success-header">
@@ -38,16 +60,16 @@
             </div>
             <div class="col-md-9 success-item">
                 <h3>Melissa Wardley</h3>
-                <h4>Melissa Wardley is a busy mother. She was experiencing caregiver’s stress and burnout, and lost touch with her own goals. She joined the Achievement Club to pursue her goal of starting a small business, Wardley’s Crafty Candies, and now it’s a reality. She’s even holding her first event at the end of the month to do market research and tasting.
+                <h3><small class="success-desc">Melissa Wardley is a busy mother. She was experiencing caregiver’s stress and burnout, and lost touch with her own goals. She joined the Achievement Club to pursue her goal of starting a small business, Wardley’s Crafty Candies, and now it’s a reality. She’s even holding her first event at the end of the month to do market research and tasting.
 
                     “We’re happy Melissa is starting a business..., just a few months ago, the idea of that would have seemed out of reach for her.” –Terri Richardson, Melissa’s coach from Achievement Club.
-                </h4>
+                </small></h3>
             </div>
         </div>
         <div class="col-md-12 container success-story">
             <div class="col-md-9">
                 <h3 class="">Jimmie Gray</h3>
-                <h4 class="">Jimmie is a veteran of the US Army, and dealt with housing and financial hardship after being discharged. However, after working with the United Way Vets Connect program and Achievement Club, he found new housing and worked successfully towards his goals. In his free time, Jimmie volunteers with United Way. He loves telling his story of triumph and would like for people to know, “Don’t be selfish and always be concerned about other people’s needs.”</h4>
+                <h3><small class="success-desc">Jimmie is a veteran of the US Army, and dealt with housing and financial hardship after being discharged. However, after working with the United Way Vets Connect program and Achievement Club, he found new housing and worked successfully towards his goals. In his free time, Jimmie volunteers with United Way. He loves telling his story of triumph and would like for people to know, “Don’t be selfish and always be concerned about other people’s needs.”</small></h3>
             </div>
             <div class="col-md-3">
                 <img src="{{ url_for('static', filename='images/ss_jimmie_gray.png') }}" height="200" style="float:right;">
@@ -55,6 +77,31 @@
         </div>
         <div class="text-center">
             <button class="btn btn-lg btn-default uw_button_inverse">SEE MORE</button>
+        </div>
+    </div>
+</div>
+<div class="jumbotron text-center home-involvement-wrapper">
+    <div class="">
+        <div class="container home-email col-md-6">
+            <div class="text-center">
+                <img src="{{ url_for('static', filename='images/email.png') }}">
+                <h2>Join our Email List</h2>
+                <h4 class="home-about-sub-heading">Join the achievement club email list to receive updates about events</h4>
+                <div class="row form-group col-xs-8 col-xs-offset-2">
+                    <input type="text" placeholder="email" class="input-lg input col-xs-8 uw_input">
+                    <span><button type="button" class="btn btn-lg btn-primary uw_button uw_button_input col-xs-4">SIGN UP</button>
+                    </span>
+                </div>
+                <!--<div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
+            </div>
+        </div>
+        <div class="container col-md-6 home-involvement">
+            <div class="text-center">
+                <img src="{{ url_for('static', filename='images/teamwork.png') }}">
+                <h2>Find Resources</h2>
+                <h4 class="home-about-sub-heading">Access achievement club member resources and tools</h4>
+                <button class="btn btn-lg btn-primary uw_button">CLICK HERE</button>
+            </div>
         </div>
     </div>
 </div>

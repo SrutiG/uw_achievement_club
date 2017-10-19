@@ -10,3 +10,16 @@ def index():
 @app.route('/home')
 def home():
 	return render_template('home.html')
+
+@app.route('/about')
+def about():
+	return render_template('about.html')
+
+@app.route('/resources')
+def resources():
+	return render_template('resources.html')
+
+@app.route('/contact')
+def contact():
+	return render_template('contact.html')
+
