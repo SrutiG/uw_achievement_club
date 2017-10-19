@@ -9,7 +9,7 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 /* navbar */
@@ -45,9 +45,9 @@ body {
 .main {
     position: relative;
     background-image: url(../images/uw_home_bkgrd.png);
-    background-size: 100% 120%;
+    background-size: 100% 100%;
     background-position: center;
-    height: 60vh;
+    height: 75vh;
     width: 100vw;
     margin-top: 0 ! important;
     padding-top: 0 ! important;
@@ -58,7 +58,7 @@ body {
 .uw-logo {
     position: absolute;
     background-color: var(--primary_dark);
-    height: 60vh;
+    height: 75vh;
     width: 100vw;
     top: 0px;
     opacity: 0.6;
@@ -66,7 +66,7 @@ body {
 
 .uw-logo-img {
     position: absolute;
-    top: 18vh;
+    top: 25vh;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -97,7 +97,7 @@ body {
 .home-about {
     position: absolute;
     background-color: transparent;
-    top: 60vh;
+    top: 75vh;
     width: 100vw;
     left: 50%;
     transform: translateX(-50%);
@@ -106,7 +106,7 @@ body {
 
 .circles {
     margin-top: 2%;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
 }
 
 .circle {
@@ -142,6 +142,11 @@ body {
     margin-bottom: 0;
 }
 
+.success-desc {
+    color: var(--uw_white) ! important;
+    font-weight: lighter;
+}
+
 .success-header {
     margin-bottom: 50px;
     color: var(--uw_white);
@@ -158,10 +163,12 @@ body {
     height: 80vh;
     background-color: var(--uw_white);
     margin-top: 0;
+    color: var(--uw_blue);
+    margin-bottom: 0;
 }
 
 .home-email {
-    margin-top: 5%;
+    margin-top: 3%;
     height: 70%;
     background-color: var(--uw_white);
     border-right: 1px dashed var(--uw_lavender);
@@ -169,7 +176,7 @@ body {
 }
 
 .home-involvement {
-    margin-top: 5%;
+    margin-top: 3%;
     height: 70%;
     background-color: var(--uw_white);
 
@@ -188,18 +195,39 @@ body {
 
 .success-item {
 }
+
+/*footer*/
+
+.uw_footer {
+    background-color: var(--uw_blue) ! important;
+    color: var(--uw_white) ! important;
+    margin-bottom: 0;
+    margin-top: 0;
+    height: 50vh;
+}
+
+.social-icon {
+    margin-left: 3%;
+}
+
+#map {
+    width: 70%;
+    height: 35vh;
+    float: right;
+}
+
 /*general*/
 
 .uw_button {
     color: var(--uw_blue);
     border: 1px solid var(--uw_blue);
-    background-color: white;
+    background-color: transparent;
 }
 
 .uw_button:hover {
     color: var(--uw_orange);
     border: 1px solid var(--uw_orange);
-    background-color: white;
+    background-color: var(--uw_white);
 }
 
 .uw_button_input {
@@ -222,4 +250,9 @@ body {
     border: 0;
     border-radius: 5px 0 0 5px;
     background-color: var(--primary_light);
+}
+
+.uw_small {
+    color: var(--white);
+    font-weight: lighter;
 }
