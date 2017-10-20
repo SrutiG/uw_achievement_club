@@ -19,7 +19,5 @@ def about():
 def resources():
 	return render_template('resources.html')
 
-@app.route('/contact')
-def contact():
-	return render_template('contact.html')
+
 
