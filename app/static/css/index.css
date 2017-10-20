@@ -66,16 +66,16 @@ body {
 
 .uw-logo-img {
     position: absolute;
-    top: 20vh;
+    top: 15vh;
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
+    background: transparent;
 }
 
 .logo-header {
-    color: var(--uw_white);
-    font-size: 6em;
-    margin-top: 10px;
+    color: var(--uw_white) ! important;
+    margin-top: 10px ! important;
     font-weight: 300 ! important;
     /*font-family: 'Enriqueta', sans-serif;*/
 }
@@ -142,18 +142,18 @@ body {
 
 .home-success {
     background-color: var(--uw_lavender);
-    color: var(--uw_white);
+    color: var(--uw_blue);
     margin-bottom: 0;
 }
 
 .success-desc {
-    color: var(--uw_white) ! important;
+    color: var(--uw_blue) ! important;
     font-weight: lighter;
 }
 
 .success-header {
     margin-bottom: 50px;
-    color: var(--uw_white);
+    color: var(--uw_blue);
 }
 
 .success-story {
@@ -239,8 +239,8 @@ body {
 }
 
 .uw_button_inverse {
-    color: white;
-    border: 1px solid white;
+    color: var(--uw_blue);
+    border: 1px solid var(--uw_blue);
     background-color: var(--uw_lavender);
 }
 
@@ -259,4 +259,12 @@ body {
 .uw_small {
     color: var(--white);
     font-weight: lighter;
+}
+
+.uw_lighter {
+    font-weight: lighter;
+}
+
+.sub-header{
+    font-size: 4em ! important;
 }
