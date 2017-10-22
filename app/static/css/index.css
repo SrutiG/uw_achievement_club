@@ -223,7 +223,7 @@ body {
     }
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:1100px) {
     .success-story {
         height: 500px;
         text-align: center;
@@ -236,7 +236,7 @@ body {
 @media screen and (max-width:600px) {
 
     .success-header {
-        font-size: 1em;
+        font-size: 0.75em ! important;
     }
     .success-story {
         height: 550px;
@@ -253,6 +253,7 @@ body {
 
 .home-involvement-wrapper {
     height: 80vh;
+    min-height: 500px;
     background-color: var(--uw_white);
     margin-top: 0;
     color: var(--uw_blue);
@@ -279,6 +280,7 @@ body {
     margin-bottom: 5%;
 }
 
+
 /*about page*/
 
 .about {
@@ -296,6 +298,7 @@ body {
     margin-bottom: 0;
     margin-top: 0;
     height: 50vh;
+    min-height: 300px;
 }
 
 .social-icon {
@@ -308,6 +311,11 @@ body {
     float: right;
 }
 
+@media screen and (max-width:1000px) {
+    #map {
+        display:none;
+    }
+}
 /*general*/
 
 .uw_button {
@@ -355,4 +363,14 @@ body {
 
 .sub-header{
     font-size: 4em ! important;
+}
+
+@media screen and (max-width:750px) {
+    .uw_input {
+        border-radius: 0px;
+    }
+
+    .uw_button_input {
+        border-radius: 5px;
+    }
 }
