@@ -23,20 +23,20 @@
 <div class="jumbotron home-about text-center">
     <h1 class="sub-header">Our Mission</h1>
     <h2>Empower families to achieve their own goals</h2>
-    <div class="col-md-12 circles">
-        <div class="col-md-4">
+    <div class="col-xs-12 circles">
+        <div class="col-xs-4">
             <div class="circle container">
                 <img class="circle-img" src="{{ url_for('static', filename='images/hold.png') }}">
             </div>
-            <span class="circle-text"><h3><span class="uw_lighter">strengthen</span> <strong>communities</strong><span class="uw_lighter">, build ties, and create a neighborhood of accomplishment.</span></h3>
+            <h3 class="circle-text"><span class="uw_lighter">strengthen</span> <strong>communities</strong><span class="uw_lighter">, build ties, and create a neighborhood of accomplishment.</span></h3>
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-4">
             <div class="circle container">
                 <img class="circle-img" src="{{ url_for('static', filename='images/paper-plane.png') }}">
             </div>
             <h3 class="circle-text"><span class="uw_lighter">encourage </span><strong>aspiration</strong><span class="uw_lighter"> to help participants grow as leaders and take control of their lives.</span></h3>
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-4">
             <div class="circle container">
                 <img class="circle-img" src="{{ url_for('static', filename='images/flag.png') }}">
             </div>
@@ -54,11 +54,11 @@
             <h1 class="sub-header">Some Achievement Club Success Stories</h1>
         </div>
 
-        <div class="col-md-12 container success-story">
-            <div class="col-md-3 succes-item">
-                <img src="{{ url_for('static', filename='images/ss_melissa_wardley.png') }}" height="200">
+        <div class="col-xs-12 container success-story">
+            <div class="col-xs-12 col-md-3 succes-item success-img-left">
+                <img class="success-img-left" src="{{ url_for('static', filename='images/ss_melissa_wardley.png') }}" height="200">
             </div>
-            <div class="col-md-9 success-item">
+            <div class="col-xs-12 col-md-9 success-item">
                 <h3>Melissa Wardley</h3>
                 <h3><small class="success-desc">Melissa Wardley is a busy mother. She was experiencing caregiver’s stress and burnout, and lost touch with her own goals. She joined the Achievement Club to pursue her goal of starting a small business, Wardley’s Crafty Candies, and now it’s a reality. She’s even holding her first event at the end of the month to do market research and tasting.
 
@@ -66,14 +66,15 @@
                 </small></h3>
             </div>
         </div>
-        <div class="col-md-12 container success-story">
-            <div class="col-md-9">
+        <div class="col-xs-12 container success-story">
+            <div class="col-xs-12 col-md-3 success-img-right">
+                <img class="success-img-right" src="{{ url_for('static', filename='images/ss_jimmie_gray.png') }}" height="200">
+            </div>
+            <div class="col-xs-12 col-md-9">
                 <h3 class="">Jimmie Gray</h3>
                 <h3><small class="success-desc">Jimmie is a veteran of the US Army, and dealt with housing and financial hardship after being discharged. However, after working with the United Way Vets Connect program and Achievement Club, he found new housing and worked successfully towards his goals. In his free time, Jimmie volunteers with United Way. He loves telling his story of triumph and would like for people to know, “Don’t be selfish and always be concerned about other people’s needs.”</small></h3>
             </div>
-            <div class="col-md-3">
-                <img src="{{ url_for('static', filename='images/ss_jimmie_gray.png') }}" height="200" style="float:right;">
-            </div>
+
         </div>
         <div class="text-center">
             <button class="btn btn-lg btn-default uw_button_inverse">SEE MORE</button>
