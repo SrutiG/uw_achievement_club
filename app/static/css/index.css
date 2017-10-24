@@ -250,6 +250,26 @@ body {
     }
 }
 
+/*home page-atl map*/
+
+.home-atl-map {
+    background-color: var(--uw_white);
+    color: var(--uw_blue);
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100vh;
+    padding: 0;
+}
+
+#atlMap {
+    height:75vh;
+    width: 100%;
+    margin-top: 2%;
+}
+
+.atl-map-header {
+}
+
 /*home page-involement*/
 
 .home-involvement-wrapper {
