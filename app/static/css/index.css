@@ -69,16 +69,19 @@ body {
 
 .uw-logo-img {
     position: absolute;
-    top: 15vh;
+    top: 40%;
     width: 100%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     background: transparent;
+}
+
+@media screen and (min-height:600px) {
+    top: 45%;
 }
 
 @media screen and (max-width: 775px) and (min-height: 300px) {
     .uw-logo-img {
-        top: 20vh;
     }
 }
 
