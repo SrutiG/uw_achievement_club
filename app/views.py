@@ -33,7 +33,6 @@ def mapstyles():
 	with app.open_resource("static/js/styles.json", "r") as data_file:
 		for line in data_file:
 			data += line.strip()
-		print data
 	return jsonify(data = data)
 
 

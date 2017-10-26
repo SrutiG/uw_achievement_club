@@ -262,6 +262,8 @@ body {
     margin-top: 0;
     margin-bottom: 0;
     padding: 0;
+    border-top: 1px solid var(--primary_light);
+    border-bottom: 1px solid var(--primary_light);
 }
 
 .map-wrapper {
