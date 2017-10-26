@@ -14,3 +14,19 @@ function addActiveClass() {
     }
     elem.classList.add('active');
 }
+
+function showDescript(elem) {
+    var goal = elem.id;
+    var goalDescript = document.getElementById(elem.id + '_desc');
+    if (goalDescript.style.display === "") {
+        goalDescript.style.display = "table";
+    }
+}
+
+function hideDescript(elem) {
+    var goal = elem.id;
+    var goalDescript = document.getElementById(elem.id + '_desc');
+    if (goalDescript.style.display === "table") {
+        goalDescript.style.display = "";
+    }
+}

@@ -6,6 +6,11 @@
     --uw_white: #FEF9FF;
     --primary_dark: #212121;
     --primary_light: #DDD;
+    --education: #8D9ECE;
+    --health: #AE4252;
+    --income: #FFA90A;
+    --civic: #8D95AB;
+    --community: #9DAC51;
 }
 
 body {
@@ -335,12 +340,106 @@ body {
 
 /*about page*/
 
-.about {
-    background-color: white;
+/*about page-goals*/
+
+.about-goals {
+    background-color: var(--uw_white);
+    color: var(--uw_blue);
+    padding-left: 0;
+    padding-right: 0;
 }
 
-.success-item {
+.goals-container {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
 }
+
+.goals-wrapper {
+    width: 100%;
+}
+.goal-wrapper {
+    display: inline-block;
+}
+.goal {
+    display: table;
+    height: 325px;
+    width: 20vw;
+    float: left;
+    margin-right: -3px; /* inline block elements add automatic margins */
+}
+
+.goal-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.goal-img-wrapper, .goal-description-wrapper {
+    display: table;
+    height: 150px;
+    width: 100%;
+}
+
+.goal-img, .goal-desc {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.goal-description-wrapper {
+    display: none;
+}
+
+.goal:hover .goal-description-wrapper {
+    display: table;
+    padding: 2%;
+    cursor: default;
+}
+
+.goal:hover .goal-img-wrapper {
+    /*display: none;*/
+    height: 50px;
+}
+
+.goal:hover .img-goal {
+    height: 50px;
+}
+
+
+.goal:hover {
+    background-color: var(--uw_blue);
+}
+
+.text-education {
+    color: var(--education);
+}
+.text-health {
+    color: var(--health);
+}
+.text-income {
+    color: var(--income);
+}
+.text-civic {
+    color: var(--civic);
+}
+.text-community {
+    color: var(--community);
+}
+/*
+.goal:hover .text-education {
+    border: 1px solid var(--education);
+}
+.goal:hover .text-health {
+    border: 1px solid var(--health);
+}
+.goal:hover .text-income {
+    border: 1px solid var(--income);
+}
+.goal:hover .text-civic {
+    border: 1px solid var(--civic);
+}
+.goal:hover .text-community {
+    border: 1px solid var(--community);
+}*/
 
 /*footer*/
 
@@ -435,3 +534,5 @@ body {
         border-radius: 5px;
     }
 }
+
+
