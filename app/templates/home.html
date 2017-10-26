@@ -82,11 +82,16 @@
     </div>
 </div>
 <div class="jumbotron home-atl-map text-center">
-    <div class="">
-        <div>
-            <h1 class="sub-header atl-map-header">Locations all over the metro area</h1>
+    <div class="container map-wrapper">
+        <div id="atlMap" class="col-md-6">
+
         </div>
-        <div id="atlMap">
+        <div class="col-md-6 map-text">
+            <div class="center-map-text">
+                <img class="map-img" src="{{ url_for('static', filename='images/location.png') }}">
+                <h2 class=""><strong>20 Achievement Club locations</strong><span class="uw_lighter"> around the metro area in Atlanta, Decatur, Brookhaven, Norcross, Marietta, College Park, Jonesboro, East Point, and Powder Springs</span></h2>
+                <button type="button" class="btn btn-lg btn-primary uw_button map-button">GET INVOLVED</button>
+            </div>
 
         </div>
     </div>

@@ -257,23 +257,44 @@ body {
 /*home page-atl map*/
 
 .home-atl-map {
-    background-color: var(--uw_white);
+    background-color: var(--primary_light);
     color: var(--uw_blue);
     margin-top: 0;
     margin-bottom: 0;
-    height: 110vh;
-    min-height: 550px;
-    padding-bottom: 0;
+    padding: 0;
+}
+
+.map-wrapper {
+    width: 100%;
+    padding: 0;
 }
 
 #atlMap {
-    height:75vh;
+    height:100vh;
     min-height: 400px;
-    width: 100%;
-    margin-top: 3%;
 }
 
 .atl-map-header {
+}
+
+.map-text {
+    color: var(--uw_blue);
+    background-color: var(--primary_light);
+    height: 100vh;
+    display: table;
+}
+
+.center-map-text {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.map-button {
+    margin-top: 2%;
+}
+
+.map-img {
+    margin-bottom: 2%;
 }
 
 /*home page-involement*/
@@ -290,7 +311,7 @@ body {
 }
 
 .home-email {
-    margin-top: 5%;
+    margin-top: 7%;
     height: 70%;
     background-color: var(--uw_white);
     border-right: 1px dashed var(--uw_lavender);
@@ -298,7 +319,7 @@ body {
 }
 
 .home-involvement {
-    margin-top: 5%;
+    margin-top: 7%;
     height: 70%;
     background-color: var(--uw_white);
 
@@ -365,7 +386,7 @@ body {
 .uw_button:hover {
     color: var(--uw_orange);
     border: 1px solid var(--uw_orange);
-    background-color: var(--uw_white);
+    background-color: transparent;
 }
 
 .uw_button_input {

@@ -121,7 +121,8 @@
                   function createHomeMap(ac_locations, styles) {
                     var united_way = {lat: 33.754740, lng: -84.385578};
                     var bounds = new google.maps.LatLngBounds();
-                    console.log(styles);
+                    var markers = [];
+                    var infowindows = [];
 
                     var atl_map = new google.maps.Map(document.getElementById('atlMap'), {
                       zoom: 9,
@@ -131,18 +132,28 @@
                       disableDefaultUI: true,
                       styles:styles
                     });
-                    for (item in ac_locations) {
-                        var position = {lat: ac_locations[item].latitude, lng: ac_locations[item].longitude};
-                        var name = ac_locations[item].name;
-                        console.log(name);
-                        var marker = new google.maps.Marker({
+                    for (var i = 0; i < ac_locations.length; i++) {
+                        var position = {lat: ac_locations[i].latitude, lng: ac_locations[i].longitude};
+                        var address = ac_locations[i].address;
+                        var name = ac_locations[i].name;
+                        var content = "<h4>" + name + "</h4><h5>" + address + "</h5>";
+                        markers[i] = new google.maps.Marker({
                           position: position,
                           map: atl_map,
                           title: name,
-                          icon: '/static/images/uw_icon.png'
+                          icon: '/static/images/uw_icon.png',
+                          id: i
                         });
+                        infowindows[i] = new google.maps.InfoWindow({
+                          content: content
+                        });
+                        google.maps.event.addListener(markers[i], 'click', function () {
+                            infowindows[this.id].open(atl_map, markers[this.id]);
+                        })
+
                         bounds.extend(position);
                     }
+
                     atl_map.setCenter(bounds.getCenter());
                     atl_map.fitBounds(bounds);
                   }
