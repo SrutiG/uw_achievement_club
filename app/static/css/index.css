@@ -70,7 +70,7 @@ body {
 
 .uw-logo-img {
     position: absolute;
-    top: 40%;
+    top: 35%;
     width: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -311,7 +311,7 @@ body {
 }
 
 .home-email {
-    margin-top: 7%;
+    margin-top: 15vh;
     height: 70%;
     background-color: var(--uw_white);
     border-right: 1px dashed var(--uw_lavender);
@@ -319,7 +319,7 @@ body {
 }
 
 .home-involvement {
-    margin-top: 7%;
+    margin-top: 15vh;
     height: 70%;
     background-color: var(--uw_white);
 
