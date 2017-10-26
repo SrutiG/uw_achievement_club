@@ -13,8 +13,8 @@
     <link href="https://fonts.googleapis.com/css?family=Enriqueta:300,400,700" rel="stylesheet">
 
     {% block extrastyle %} {% endblock %}
-
     <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+
 
     {% block extrascript %}{% endblock %}
 
@@ -67,349 +67,84 @@
                     </div>
                     <script>
                   function initMap() {
+                    var ac_locations;
+                    var request = new XMLHttpRequest();
+                    request.onreadystatechange = function() {
+                        if (request.readyState === 4) {
+                            if (request.status === 200) {
+                                ac_locations = JSON.parse(request.responseText).data;
+                                ac_locations = JSON.parse(ac_locations);
+                                var styles_request = new XMLHttpRequest();
+                                styles_request.onreadystatechange = function() {
+                                    if (styles_request.readyState === 4) {
+                                        if (styles_request.status === 200) {
+                                            styles = JSON.parse(styles_request.responseText).data;
+                                            styles = JSON.parse(styles);
+                                            createMap(ac_locations, styles);
+                                        } else {
+                                            console.log(styles_request.responseText);
+                                        }
+                                    }
+                                };
+                                styles_request.open("GET", '/mapstyles' , true);
+                                styles_request.send(null);
+                            } else {
+                                console.log(request.responseText);
+                            }
+                        }
+                    };
+                    request.open("GET", '/locations' , true);
+                    request.send(null);
+
+                  }
+
+                  function createMap(ac_locations, styles) {
+                    console.log(ac_locations);
+                    createFooterMap();
+                    if (document.location.pathname === '/home') {
+                        createHomeMap(ac_locations, styles);
+                    }
+                  }
+
+                  function createFooterMap() {
                     var united_way = {lat: 33.754740, lng: -84.385578};
                     var map = new google.maps.Map(document.getElementById('map'), {
                       zoom: 15,
                       center: united_way
                     });
-                    var atl_map = new google.maps.Map(document.getElementById('atlMap'), {
-                      zoom: 12,
-                      center: united_way,
-                      styles:[
-    {
-        "featureType": "all",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.country",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.province",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.locality",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.neighborhood",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.land_parcel",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            },
-            {
-                "hue": "#ff0000"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.man_made",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "color": "#944242"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.man_made",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#FEF9FF"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.natural",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "color": "#FEF9FF"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.natural.landcover",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.natural.terrain",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            },
-            {
-                "saturation": "-1"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.attraction",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#292929"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "visibility": "off"
-            },
-            {
-                "color": "#494949"
-            },
-            {
-                "saturation": "-85"
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#888888"
-            },
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#7f7f7f"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "transit.line",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "transit.station",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "transit.station.airport",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "transit.station.bus",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "transit.station.rail",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#dddddd"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#eeeeee"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    }
-]
-                    });
                     var marker = new google.maps.Marker({
                       position: united_way,
                       map: map
-
                     });
+                  }
+
+                  function createHomeMap(ac_locations, styles) {
+                    var united_way = {lat: 33.754740, lng: -84.385578};
+                    var bounds = new google.maps.LatLngBounds();
+                    console.log(styles);
+
+                    var atl_map = new google.maps.Map(document.getElementById('atlMap'), {
+                      zoom: 9,
+                      center: united_way,
+                      gestureHandling: 'none',
+                      zoomControl: false,
+                      disableDefaultUI: true,
+                      styles:styles
+                    });
+                    for (item in ac_locations) {
+                        var position = {lat: ac_locations[item].latitude, lng: ac_locations[item].longitude};
+                        var name = ac_locations[item].name;
+                        console.log(name);
+                        var marker = new google.maps.Marker({
+                          position: position,
+                          map: atl_map,
+                          title: name,
+                          icon: '/static/images/uw_icon.png'
+                        });
+                        bounds.extend(position);
+                    }
+                    atl_map.setCenter(bounds.getCenter());
+                    atl_map.fitBounds(bounds);
                   }
                 </script>
                     <script async defer
