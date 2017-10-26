@@ -400,6 +400,10 @@ body {
     display: none;
 }
 
+.goals-header {
+    margin-bottom: 2%;
+}
+
 .goal:hover .goal-description-wrapper {
     display: table;
     padding: 2%;
