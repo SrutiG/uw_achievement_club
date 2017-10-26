@@ -10,6 +10,7 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    background-color: var(--uw_white);
 }
 
 /* navbar */
@@ -69,16 +70,19 @@ body {
 
 .uw-logo-img {
     position: absolute;
-    top: 15vh;
+    top: 35%;
     width: 100%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     background: transparent;
+}
+
+@media screen and (min-height:600px) {
+    top: 45%;
 }
 
 @media screen and (max-width: 775px) and (min-height: 300px) {
     .uw-logo-img {
-        top: 20vh;
     }
 }
 
@@ -250,19 +254,64 @@ body {
     }
 }
 
+/*home page-atl map*/
+
+.home-atl-map {
+    background-color: var(--primary_light);
+    color: var(--uw_blue);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.map-wrapper {
+    width: 100%;
+    padding: 0;
+}
+
+#atlMap {
+    height:100vh;
+    min-height: 400px;
+}
+
+.atl-map-header {
+}
+
+.map-text {
+    color: var(--uw_blue);
+    background-color: var(--primary_light);
+    height: 100vh;
+    display: table;
+}
+
+.center-map-text {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.map-button {
+    margin-top: 2%;
+}
+
+.map-img {
+    margin-bottom: 2%;
+}
+
 /*home page-involement*/
 
 .home-involvement-wrapper {
     height: 80vh;
     min-height: 500px;
     background-color: var(--uw_white);
-    margin-top: 0;
+    margin-top: 0 ! important;
+    padding-top: 0;
+    padding-bottom: 0;
     color: var(--uw_blue);
     margin-bottom: 0;
 }
 
 .home-email {
-    margin-top: 3%;
+    margin-top: 15vh;
     height: 70%;
     background-color: var(--uw_white);
     border-right: 1px dashed var(--uw_lavender);
@@ -270,7 +319,7 @@ body {
 }
 
 .home-involvement {
-    margin-top: 3%;
+    margin-top: 15vh;
     height: 70%;
     background-color: var(--uw_white);
 
@@ -337,7 +386,7 @@ body {
 .uw_button:hover {
     color: var(--uw_orange);
     border: 1px solid var(--uw_orange);
-    background-color: var(--uw_white);
+    background-color: transparent;
 }
 
 .uw_button_input {

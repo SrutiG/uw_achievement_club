@@ -13,8 +13,8 @@
     <link href="https://fonts.googleapis.com/css?family=Enriqueta:300,400,700" rel="stylesheet">
 
     {% block extrastyle %} {% endblock %}
-
     <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+
 
     {% block extrascript %}{% endblock %}
 
@@ -67,6 +67,46 @@
                     </div>
                     <script>
                   function initMap() {
+                    var ac_locations;
+                    var request = new XMLHttpRequest();
+                    request.onreadystatechange = function() {
+                        if (request.readyState === 4) {
+                            if (request.status === 200) {
+                                ac_locations = JSON.parse(request.responseText).data;
+                                ac_locations = JSON.parse(ac_locations);
+                                var styles_request = new XMLHttpRequest();
+                                styles_request.onreadystatechange = function() {
+                                    if (styles_request.readyState === 4) {
+                                        if (styles_request.status === 200) {
+                                            styles = JSON.parse(styles_request.responseText).data;
+                                            styles = JSON.parse(styles);
+                                            createMap(ac_locations, styles);
+                                        } else {
+                                            console.log(styles_request.responseText);
+                                        }
+                                    }
+                                };
+                                styles_request.open("GET", '/mapstyles' , true);
+                                styles_request.send(null);
+                            } else {
+                                console.log(request.responseText);
+                            }
+                        }
+                    };
+                    request.open("GET", '/locations' , true);
+                    request.send(null);
+
+                  }
+
+                  function createMap(ac_locations, styles) {
+                    console.log(ac_locations);
+                    createFooterMap();
+                    if (document.location.pathname === '/home') {
+                        createHomeMap(ac_locations, styles);
+                    }
+                  }
+
+                  function createFooterMap() {
                     var united_way = {lat: 33.754740, lng: -84.385578};
                     var map = new google.maps.Map(document.getElementById('map'), {
                       zoom: 15,
@@ -76,6 +116,46 @@
                       position: united_way,
                       map: map
                     });
+                  }
+
+                  function createHomeMap(ac_locations, styles) {
+                    var united_way = {lat: 33.754740, lng: -84.385578};
+                    var bounds = new google.maps.LatLngBounds();
+                    var markers = [];
+                    var infowindows = [];
+
+                    var atl_map = new google.maps.Map(document.getElementById('atlMap'), {
+                      zoom: 9,
+                      center: united_way,
+                      gestureHandling: 'none',
+                      zoomControl: false,
+                      disableDefaultUI: true,
+                      styles:styles
+                    });
+                    for (var i = 0; i < ac_locations.length; i++) {
+                        var position = {lat: ac_locations[i].latitude, lng: ac_locations[i].longitude};
+                        var address = ac_locations[i].address;
+                        var name = ac_locations[i].name;
+                        var content = "<h4>" + name + "</h4><h5>" + address + "</h5>";
+                        markers[i] = new google.maps.Marker({
+                          position: position,
+                          map: atl_map,
+                          title: name,
+                          icon: '/static/images/uw_icon.png',
+                          id: i
+                        });
+                        infowindows[i] = new google.maps.InfoWindow({
+                          content: content
+                        });
+                        google.maps.event.addListener(markers[i], 'click', function () {
+                            infowindows[this.id].open(atl_map, markers[this.id]);
+                        })
+
+                        bounds.extend(position);
+                    }
+
+                    atl_map.setCenter(bounds.getCenter());
+                    atl_map.fitBounds(bounds);
                   }
                 </script>
                     <script async defer
