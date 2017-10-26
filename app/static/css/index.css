@@ -7,8 +7,8 @@
     --primary_dark: #212121;
     --primary_light: #DDD;
     --education: #8D9ECE;
-    --health: #AE4252;
-    --income: #FFA90A;
+    --health: #D54C61;
+    --income: #FFC542;
     --civic: #8D95AB;
     --community: #9DAC51;
 }
@@ -340,6 +340,13 @@ body {
 
 /*about page*/
 
+/*about page-description*/
+
+.about-description {
+    background-color: var(--uw_lavender);
+    height: 100vh;
+}
+
 /*about page-goals*/
 
 .about-goals {
@@ -347,6 +354,9 @@ body {
     color: var(--uw_blue);
     padding-left: 0;
     padding-right: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    height: auto;
 }
 
 .goals-container {
@@ -367,6 +377,7 @@ body {
     width: 20vw;
     float: left;
     margin-right: -3px; /* inline block elements add automatic margins */
+    margin-bottom: -4px;
 }
 
 .goal-content {
@@ -404,42 +415,19 @@ body {
     height: 50px;
 }
 
-
 .goal:hover {
     background-color: var(--uw_blue);
 }
 
-.text-education {
-    color: var(--education);
+/*about page-success stories*/
+
+.about-success-stories {
+    background-color: var(--primary_light);
+    height: 100vh;
+    display: block;
+    margin-bottom: 0;
 }
-.text-health {
-    color: var(--health);
-}
-.text-income {
-    color: var(--income);
-}
-.text-civic {
-    color: var(--civic);
-}
-.text-community {
-    color: var(--community);
-}
-/*
-.goal:hover .text-education {
-    border: 1px solid var(--education);
-}
-.goal:hover .text-health {
-    border: 1px solid var(--health);
-}
-.goal:hover .text-income {
-    border: 1px solid var(--income);
-}
-.goal:hover .text-civic {
-    border: 1px solid var(--civic);
-}
-.goal:hover .text-community {
-    border: 1px solid var(--community);
-}*/
+
 
 /*footer*/
 
@@ -523,6 +511,26 @@ body {
 
 .sub-header{
     font-size: 4em ! important;
+}
+
+.text-education {
+    color: var(--education);
+}
+
+.text-health {
+    color: var(--health);
+}
+
+.text-income {
+    color: var(--income);
+}
+
+.text-civic {
+    color: var(--civic);
+}
+
+.text-community {
+    color: var(--community);
 }
 
 @media screen and (max-width:750px) {
