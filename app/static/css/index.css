@@ -355,7 +355,6 @@ body {
     color: var(--uw_blue);
     padding-left: 0;
     padding-right: 0;
-    padding-bottom: 0;
     margin-bottom: 0;
     height: auto;
 }
@@ -417,13 +416,14 @@ body {
 }
 
 .goal:hover {
-    background-color: var(--uw_blue);
+    /*background-color: var(--uw_blue);*/
+    border: 2px solid var(--primary_light);
 }
 
 /*about page-success stories*/
 
 .about-success-stories {
-    background-color: var(--primary_light);
+    background-color: var(--uw_lavender);
     height: 100vh;
     display: block;
     margin-bottom: 0;
