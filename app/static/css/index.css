@@ -398,7 +398,7 @@ body {
 
 .about-content-pic-fade {
     background-color: var(--uw_white);
-    opacity: 0.8;
+    opacity: 0.75;
     height: 100vh;
 
 }
