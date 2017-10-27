@@ -342,11 +342,37 @@ body {
 
 /*about page-description*/
 
-.about-description {
-    background-color: var(--uw_lavender);
-    height: 50vh;
-    margin-bottom: 0;
+.about-bkgrd {
+    height: 90vh;
+    background: url(../images/bricks.png);
+    background-size: 100% auto;
+
 }
+
+.about-bkgrd-fade {
+    height: 90vh;
+    background-color: var(--uw_lavender);
+    position: relative;
+    opacity: 0.8;
+
+}
+
+.about-header {
+    position: absolute;
+    top: 0;
+    height: 75vh;
+    background-color: transparent;
+    color: var(--uw_white);
+    font-weight: 300;
+    display: table;
+}
+
+.about-header-text {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+
 
 /*about page-goals*/
 
@@ -401,7 +427,8 @@ body {
 }
 
 .goals-header {
-    margin-bottom: 2%;
+    margin-bottom: 1%;
+    padding: 0 5% 0 5%;;
 }
 
 .goal:hover .goal-description-wrapper {

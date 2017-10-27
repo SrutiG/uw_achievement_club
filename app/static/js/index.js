@@ -1,6 +1,6 @@
 function addActiveClass() {
     var navbar = document.getElementById("navbar");
-    if (window.location.pathname == '/home') {
+    if (window.location.pathname == '/home' || window.location.pathname == '/about') {
         navbar.style.backgroundColor = "transparent"
     } else {
         navbar.style.backgroundColor = "var(--uw_blue)"
