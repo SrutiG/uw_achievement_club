@@ -419,11 +419,25 @@ body {
 .about-peer-support {
     height: 50vh;
     background-color: var(--uw_lavender);
+    display: table;
+    color: var(--uw_blue);
 }
 
 .about-cc-transfers {
     height: 50vh;
-    background-color: var(--uw_orange);
+    background-color: var(--primary_light);
+    display: table;
+    color: var(--uw_blue);
+}
+
+.peer-support-table {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cc-transfers-table {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 /*about page-goals*/
