@@ -340,7 +340,7 @@ body {
 
 /*about page*/
 
-/*about page-description*/
+/*about page-header*/
 
 .about-bkgrd {
     height: 90vh;
@@ -372,7 +372,59 @@ body {
     display: table-cell;
 }
 
+/*about-page description*/
 
+.about-description {
+    background-color: var(--primary_light);
+    color: var(--uw_blue);
+    margin-bottom: 0;
+}
+
+/*about page-content*/
+
+.about-content {
+    margin: 0;
+    padding: 0;
+}
+
+.about-content-pic {
+    height: 100vh;
+    background: url('../images/community.png');
+    background-position: center;
+    background-size: auto 100vh;
+    padding: 0;
+    position: relative;
+}
+
+.about-content-pic-fade {
+    background-color: var(--uw_white);
+    opacity: 0.75;
+    height: 100vh;
+
+}
+
+.about-content-text {
+    position: absolute;
+    top: 0;
+    color: var(--uw_blue);
+    display: table;
+    height: 100vh;
+}
+
+.about-content-text-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.about-peer-support {
+    height: 50vh;
+    background-color: var(--uw_lavender);
+}
+
+.about-cc-transfers {
+    height: 50vh;
+    background-color: var(--uw_orange);
+}
 
 /*about page-goals*/
 
