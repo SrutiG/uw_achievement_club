@@ -1,6 +1,6 @@
 function addActiveClass() {
     var navbar = document.getElementById("navbar");
-    if (window.location.pathname == '/home') {
+    if (window.location.pathname == '/home' || window.location.pathname == '/about') {
         navbar.style.backgroundColor = "transparent"
     } else {
         navbar.style.backgroundColor = "var(--uw_blue)"
@@ -13,4 +13,20 @@ function addActiveClass() {
         a[i].classList.remove('active');
     }
     elem.classList.add('active');
+}
+
+function showDescript(elem) {
+    var goal = elem.id;
+    var goalDescript = document.getElementById(elem.id + '_desc');
+    if (goalDescript.style.display === "") {
+        goalDescript.style.display = "table";
+    }
+}
+
+function hideDescript(elem) {
+    var goal = elem.id;
+    var goalDescript = document.getElementById(elem.id + '_desc');
+    if (goalDescript.style.display === "table") {
+        goalDescript.style.display = "";
+    }
 }
