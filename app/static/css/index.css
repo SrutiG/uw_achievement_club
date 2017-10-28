@@ -397,8 +397,8 @@ body {
 }
 
 .about-content-pic-fade {
-    background-color: var(--uw_white);
-    opacity: 0.75;
+    background-color: var(--uw_blue);
+    opacity: 0.6;
     height: 100vh;
 
 }
@@ -406,7 +406,7 @@ body {
 .about-content-text {
     position: absolute;
     top: 0;
-    color: var(--uw_blue);
+    color: var(--uw_white);
     display: table;
     height: 100vh;
 }
