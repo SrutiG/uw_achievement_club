@@ -612,6 +612,7 @@ body {
 
 .sub-header{
     font-size: 4em ! important;
+    text-transform: uppercase;
 }
 
 .text-education {
