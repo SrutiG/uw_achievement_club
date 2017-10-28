@@ -378,6 +378,10 @@ body {
     background-color: var(--uw_white);
     color: var(--uw_blue);
     margin-bottom: 0;
+
+}
+
+.about-description-text {
 }
 
 /*about page-content*/
