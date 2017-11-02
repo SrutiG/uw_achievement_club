@@ -517,7 +517,7 @@ body {
 
 .goal:hover {
     /*background-color: var(--uw_blue);*/
-    border: 2px solid var(--primary_light);
+    border: 2px solid var(--uw_orange);
 }
 
 /*about page-success stories*/
@@ -682,25 +682,6 @@ body {
     font-size: 4em ! important;
 }
 
-.text-education {
-    color: var(--education);
-}
-
-.text-health {
-    color: var(--health);
-}
-
-.text-income {
-    color: var(--income);
-}
-
-.text-civic {
-    color: var(--civic);
-}
-
-.text-community {
-    color: var(--community);
-}
 
 @media screen and (max-width:750px) {
     .uw_input {
