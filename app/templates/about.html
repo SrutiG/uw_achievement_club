@@ -86,28 +86,32 @@
         </div>
     </div>
 </div>
+
 <div class="about-success-stories jumbotron text-center col-xs-12">
     <div class="success-stories-wrapper">
+        <a id="success"></a>
         <div class="col-xs-8 about-success-header">
             <div class="about-success-content">
                 <h2 class="uw_lighter text-uppercase">We dedicate ourselves to helping our members find success rooted in free will. Read some of our success stories.</h2>
             </div>
         </div>
         {% for story in success_stories %}
-            <div class="col-xs-4 about-success-story">
-                <div class="about-success-img">
-                    <img class="success-img" src="{{ url_for('static', filename='images/' + story['Photo']) }}">
-                </div>
-                <div class="about-success-fade">
-
-                </div>
-                <div class="about-success-story-desc">
-                    <h2>{{ story['Name'] }}</h2>
-                   <h4 class="uw_lighter">{{ story['Success_Story'] }}</h4>
-                </div>
+        <div class="col-xs-4 about-success-story">
+            <div class="about-success-img">
+                <img class="success-img" src="{{ url_for('static', filename='images/' + story['Photo']) }}">
             </div>
+            <div class="about-success-fade">
+
+            </div>
+            <div class="about-success-story-desc">
+                <h2>{{ story['Name'] }}</h2>
+                <h4 class="uw_lighter">{{ story['Success_Story'] }}</h4>
+            </div>
+        </div>
         {% endfor %}
     </div>
 </div>
+
+
 
 {% endblock %}
