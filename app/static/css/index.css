@@ -516,8 +516,8 @@ body {
 }
 
 .goal:hover {
-    /*background-color: var(--uw_blue);*/
-    border: 2px solid var(--uw_orange);
+    background-color: var(--uw_orange);
+    /*border: 2px solid var(--uw_orange);*/
 }
 
 /*about page-success stories*/
