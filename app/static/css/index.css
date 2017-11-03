@@ -383,6 +383,9 @@ body {
 }
 
 .about-description-text {
+    width: 70%;
+    margin:auto;
+    font-size: 3em;
 }
 
 /*about page-content*/
@@ -403,7 +406,7 @@ body {
 
 .about-content-pic-fade {
     background-color: var(--uw_orange);
-    opacity: 0.85;
+    opacity: 0.9;
     height: 100vh;
 
 }
@@ -424,14 +427,14 @@ body {
 
 .about-peer-support {
     height: 50vh;
-    background-color: var(--uw_lavender);
+    background-color: var(--primary_light);
     display: table;
     color: var(--uw_blue);
 }
 
 .about-cc-transfers {
     height: 50vh;
-    background-color: var(--primary_light);
+    background-color: var(--uw_lavender);
     display: table;
     color: var(--uw_blue);
 }
@@ -583,7 +586,7 @@ body {
     color: var(--uw_blue);
     background-color: transparent;
     left: 0;
-    padding: 25px;
+    padding: 20px;
     display: none;
 }
 
@@ -682,6 +685,11 @@ body {
 
 .sub-header{
     font-size: 4em ! important;
+}
+
+.larger-h4 {
+    font-size: 1.4em;
+
 }
 
 
