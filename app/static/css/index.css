@@ -11,6 +11,7 @@
     --income: #FFC542;
     --civic: #8D95AB;
     --community: #9DAC51;
+    --border_color: var(--uw_orange);
 }
 
 body {
@@ -340,7 +341,7 @@ body {
 
 /*about page*/
 
-/*about page-description*/
+/*about page-header*/
 
 .about-bkgrd {
     height: 90vh;
@@ -372,7 +373,78 @@ body {
     display: table-cell;
 }
 
+/*about-page description*/
 
+.about-description {
+    background-color: var(--uw_white);
+    color: var(--uw_blue);
+    margin-bottom: 0;
+
+}
+
+.about-description-text {
+}
+
+/*about page-content*/
+
+.about-content {
+    margin: 0;
+    padding: 0;
+}
+
+.about-content-pic {
+    height: 100vh;
+    background: url('../images/community.png');
+    background-position: center;
+    background-size: auto 100vh;
+    padding: 0;
+    position: relative;
+}
+
+.about-content-pic-fade {
+    background-color: var(--uw_orange);
+    opacity: 0.85;
+    height: 100vh;
+
+}
+
+.about-content-text {
+    position: absolute;
+    top: 0;
+    color: var(--uw_blue);
+    display: table;
+    height: 100vh;
+
+}
+
+.about-content-text-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.about-peer-support {
+    height: 50vh;
+    background-color: var(--uw_lavender);
+    display: table;
+    color: var(--uw_blue);
+}
+
+.about-cc-transfers {
+    height: 50vh;
+    background-color: var(--primary_light);
+    display: table;
+    color: var(--uw_blue);
+}
+
+.peer-support-table {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cc-transfers-table {
+    display: table-cell;
+    vertical-align: middle;
+}
 
 /*about page-goals*/
 
@@ -428,7 +500,6 @@ body {
 
 .goals-header {
     margin-bottom: 1%;
-    padding: 0 5% 0 5%;;
 }
 
 .goal:hover .goal-description-wrapper {
@@ -447,17 +518,85 @@ body {
 }
 
 .goal:hover {
-    /*background-color: var(--uw_blue);*/
-    border: 2px solid var(--primary_light);
+    background-color: var(--primary_light);
+    /*border: 2px solid var(--uw_orange);*/
 }
 
 /*about page-success stories*/
 
 .about-success-stories {
     background-color: var(--uw_lavender);
-    height: 100vh;
     display: block;
     margin-bottom: 0;
+    color: var(--uw_blue);
+}
+
+.success-stories-header {
+    margin-bottom: 2%;
+}
+
+.about-success-story {
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.success-img {
+    width: 100%;
+    border: 4px solid var(--border_color);
+}
+
+.about-success-header {
+    display: table;
+}
+
+.about-success-content {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: var(--primary_light);
+    border: 4px solid var(--border_color);
+    height: 386.67px;
+    padding: 30px;
+}
+
+.about-success-img {
+    position: relative;
+}
+
+.about-success-fade {
+    height: 100%;
+    width: 100%;
+    opacity: 0.85;
+    background-color: var(--uw_orange);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 15px solid var(--uw_lavender);
+    border-right: 15px solid var(--uw_lavender);
+    display: none;
+}
+
+.about-success-story-desc {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    color: var(--uw_blue);
+    background-color: transparent;
+    left: 0;
+    padding: 25px;
+    display: none;
+}
+
+.about-success-story:hover .about-success-fade {
+    display: inline-block;
+}
+
+.about-success-story:hover .about-success-story-desc {
+    display: inline-block;
+}
+
+.about-success-story:hover {
+    cursor: default;
 }
 
 
@@ -545,25 +684,6 @@ body {
     font-size: 4em ! important;
 }
 
-.text-education {
-    color: var(--education);
-}
-
-.text-health {
-    color: var(--health);
-}
-
-.text-income {
-    color: var(--income);
-}
-
-.text-civic {
-    color: var(--civic);
-}
-
-.text-community {
-    color: var(--community);
-}
 
 @media screen and (max-width:750px) {
     .uw_input {

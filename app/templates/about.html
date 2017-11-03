@@ -9,14 +9,59 @@
     <div class="about-header-text">
         <h1 class="uw_lighter">About the Achievement Club</h1>
     </div>
+</div>
+<div class="about-description jumbotron text-center col-xs-12">
+    <div class="about-description-wrapper col-xs-8 col-xs-offset-2">
+        <h2 class="about-description-text uw_lighter text-uppercase">Our approach is unique because it promotes family accountability and encourages a cycle of giving back with a two-generation approach.</h2>
+    </div>
+</div>
+<div class="about-content jumbotron col-xs-12">
+    <div class="col-md-6 about-content-pic">
+        <div class="col-md-12 about-content-pic-fade">
 
+        </div>
 
+    </div>
+    <div class="col-md-6 about-content-text col-md-6">
+        <div class="container about-content-text-wrapper">
+            <h2 class="">The Community Helps You</h2>
+            <h4 class="uw_lighter">Families in crisis are connected to a case management service. The primary goal is <strong>stabilizing connection to essential services</strong>.</h4>
+            <br>
+            <h2 class="">You Help Yourself</h2>
+            <h4 class="uw_lighter">Families work on their dreams by reaching goals. They build <strong>self efficacy</strong> and <strong>resiliency</strong>.</h4>
+            <br>
+            <h2 class="">You Help the Community</h2>
+            <h4 class="uw_lighter">In this step families give back and engage with their neighbors. This builds <strong>local leadership</strong> and <strong>collective efficacy</strong>.</h4>
+        </div>
+    </div>
+    <div class="col-md-6 about-peer-support">
+        <div class="peer-support-table text-center">
+            <div class="">
+                <img src="{{ url_for('static', filename='images/handshake.png') }}">
+            </div>
+            <div class="">
+                <h2 class="">Peer Support</h2>
+                <h4 class="uw_lighter">Participants join a <strong>group of neighbors</strong> to set goals for improvement.</h4>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-6 about-cc-transfers">
+        <div class="cc-transfers-table text-center">
+            <div class="">
+                <img src="{{ url_for('static', filename='images/user.png') }}">
+            </div>
+            <div class="">
+                <h2 class="">Conditional Cash Transfers</h2>
+                <h4 class="uw_lighter">Participants get a <strong>cash reward</strong> each step along the way for meeting goals.</h4>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="jumbotron about-goals text-center col-xs-12">
     <div class="container col-xs-12 goals-container">
-        <div class="col-xs-12 goals-header">
-            <h1 class="sub-header">Goals</h1>
-            <h2 class="uw_lighter">As an Achievement Club family member, you have the opportunity to <strong>set and achieve goals</strong> in <strong>5 focus areas </strong>within the atmosphere of a <strong>supportive group of neighbors</strong></h2>
+        <div class="col-xs-8 col-xs-offset-2 goals-header">
+            <h2 class="uw_lighter text-uppercase">As an Achievement Club family member, you will set and achieve goals in 5 focus areas within the atmosphere of a supportive group of neighbors</h2>
         </div>
         <div class="goals-wrapper">
             {% for goal in goals %}
@@ -25,7 +70,7 @@
                     <div class="{{ 'goal-content text-' + goal['name'] }}">
                         <div class="goal-img-wrapper" >
                             <div class="goal-img">
-                                <img class="img-goal" src="{{ url_for('static', filename='images/' + goal['name'] + '-logo.png') }}">
+                                <img class="img-goal" src="{{ url_for('static', filename='images/' + 'new-' + goal['name'] + '.png') }}">
                             </div>
                         </div>
                         <div class="goal-description-wrapper" id="{{ goal['name'] + '_desc' }}">
@@ -41,10 +86,32 @@
         </div>
     </div>
 </div>
-<div class="about-success-stories jumbotron text-center">
-    <div class="container">
 
+<div class="about-success-stories jumbotron text-center col-xs-12">
+    <div class="success-stories-wrapper">
+        <a id="success"></a>
+        <div class="col-xs-8 about-success-header">
+            <div class="about-success-content">
+                <h2 class="uw_lighter text-uppercase">We dedicate ourselves to helping our members find success rooted in free will. Read some of our success stories.</h2>
+            </div>
+        </div>
+        {% for story in success_stories %}
+        <div class="col-xs-4 about-success-story">
+            <div class="about-success-img">
+                <img class="success-img" src="{{ url_for('static', filename='images/' + story['Photo']) }}">
+            </div>
+            <div class="about-success-fade">
+
+            </div>
+            <div class="about-success-story-desc">
+                <h2>{{ story['Name'] }}</h2>
+                <h4 class="uw_lighter">{{ story['Success_Story'] }}</h4>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </div>
+
+
 
 {% endblock %}
