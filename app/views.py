@@ -15,7 +15,7 @@ def home():
 @app.route('/about')
 def about():
 	success_stories = []
-	with app.open_resource('success_stories.csv', 'rb') as csvfile:
+	with app.open_resource('success_stories.csv', 'r') as csvfile:
 		reader = csv.DictReader(csvfile)
 		for row in reader:
 			success_story = row['Success_Story']
