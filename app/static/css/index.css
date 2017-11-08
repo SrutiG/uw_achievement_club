@@ -602,6 +602,33 @@ body {
     cursor: default;
 }
 
+/*resources*/
+
+.login-resources {
+    height: 100vh;
+    display: table;
+}
+
+.login-form {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: var(--uw_white);
+}
+
+.login-header {
+    margin-bottom: 2%;
+    color: var(--uw_orange);
+}
+
+.login_input {
+    border: 0;
+    border-radius: 0;
+    background-color: var(--uw_white);
+    border-bottom: 1px solid var(--uw_blue);
+    color: var(--uw_blue);
+    margin-bottom: 3%;
+}
+
 
 /*footer*/
 
