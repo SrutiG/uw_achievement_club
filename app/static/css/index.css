@@ -244,6 +244,7 @@ body {
 .success-video-overlay-text {
     position: absolute;
     top: 50%;
+    left: 0;
     transform: translateY(-50%);
     width: 100%;
     color: var(--uw_white);
