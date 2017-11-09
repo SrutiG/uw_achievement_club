@@ -232,13 +232,21 @@ body {
     height: 100% ! important;
 }
 
-.success-video-overlay, .success-video-overlay-text {
+.success-video-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100% ! important;
     height: 100% ! important;
 
+}
+
+.success-video-overlay-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    color: var(--uw_white);
 }
 
 .success-video-overlay {
@@ -262,9 +270,6 @@ body {
 
 }
 
-.success-video-overlay-text {
-    color: var(--uw_white);
-}
 /*
 .success-video-overlay-purple {
     background-color: var(--uw_lavender);
