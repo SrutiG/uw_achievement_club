@@ -271,6 +271,16 @@ body {
 
 }
 
+.success-video-2 {
+    float: right;
+}
+
+@media screen and (max-width:768px) {
+    .success-video-1, .success-video-2, .success-video-content {
+        padding-bottom: 56.25% ! important;
+    }
+}
+
 /*
 .success-video-overlay-purple {
     background-color: var(--uw_lavender);
