@@ -136,9 +136,20 @@ body {
     background-color: transparent;
     top: 90vh;
     width: 100vw;
+    height: 100vh;
+    min-height: 600px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    padding-top: 0;
     left: 50%;
     transform: translateX(-50%);
     color: var(--uw_blue);
+    display: table;
+}
+
+.home-about-wrapper {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 
