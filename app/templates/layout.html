@@ -32,12 +32,25 @@
 {% endwith %}
 <body {% block class %} {%endblock %} onload="addActiveClass();">
 <nav id="navbar" class="navbar navbar-inverse bg-inverse fixed-top">
-    <div class="col-xs-12 col-md-6 col-md-offset-3 text-center nav-items">
+    <div class="col-xs-12 col-md-8 col-md-offset-2 text-center nav-items">
         <ul class="list-unstyled list-inline">
-            <li class="col-xs-3"><a id="home" class="nav-item" href="{{ url_for('home') }}">HOME</a></li>
-            <li class="col-xs-3"><a id="about" class="nav-item" href="{{ url_for('about') }}">ABOUT</a></li>
-            <li class="col-xs-3"><a id="resources" class="nav-item" href="{{ url_for('resources') }}">RESOURCES</a></li>
-            <li class="col-xs-3"><a id="contact" class="nav-item" href="#footer-contact">CONTACT</a></li>
+            <div class="col-xs-1"></div>
+            <li class="col-xs-2 text-uppercase"><a id="home" class="nav-item" href="{{ url_for('home') }}">Home</a></li>
+            <li class="col-xs-2 text-uppercase"><a id="about" class="nav-item" href="{{ url_for('about') }}">About</a></li>
+            <li class="col-xs-2 text-uppercase"><a id="resources" class="nav-item" href="{{ url_for('resources') }}">Resources</a></li>
+            <li class="col-xs-2 text-uppercase hover-dropdown">
+                <a id="counties" class="nav-item">Counties
+                    <span class="nav-dropdown-icon glyphicon glyphicon-chevron-down"></span>
+                </a>
+                <div class="counties-dropdown">
+                    <ul class="dropdown-items list-unstyled">
+                        <li><a href="{{ url_for('county') }}" class="text-uppercase nav-item nav-dropdown-item" id="Fulton">Fulton</a></li>
+                        <li><a href="#" class="text-uppercase nav-item nav-dropdown-item" id="Gwinnett">Gwinnett</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="col-xs-2 text-uppercase"><a id="contact" class="nav-item" href="#footer-contact">Contact</a></li>
+            <div class="col-xs-1"></div>
         </ul>
     </div>
 

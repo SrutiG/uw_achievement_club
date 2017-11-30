@@ -45,5 +45,10 @@ def mapstyles():
 			data += line.strip()
 	return jsonify(data = data)
 
+@app.route('/county')
+def county():
+	return render_template('county.html', county='Fulton')
+
+
 
 

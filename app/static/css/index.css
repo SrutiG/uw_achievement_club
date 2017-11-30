@@ -111,13 +111,37 @@ body {
     color: var(--uw_white);
 }
 
+.nav-dropdown-item {
+    margin-bottom: 3px;
+}
+
 .active, .nav-item:hover {
     color: var(--uw_orange) ! important;
     border-bottom: 1px solid var(--uw_orange);
     text-decoration: none;
 }
 
+.counties-dropdown {
+    margin-top: 5px;
+    display: none;
+}
+
+.nav-dropdown-icon {
+    font-size: 0.8em;
+    font-weight: 300;
+}
+
+.hover-dropdown:hover {
+    cursor: default;
+}
+
+.hover-dropdown:hover .counties-dropdown {
+    display:block;
+}
+
 /*===================================home page===================================*/
+
+/*home page-header*/
 
 .main {
     position: relative;
@@ -168,7 +192,7 @@ body {
     font-weight: 300 ! important;
 }
 
-/*home page- about*/
+/*home page-about*/
 
 .home-about-bkgrd {
     background: url('../images/atlanta.png');
@@ -696,21 +720,52 @@ body {
 
 /*===================================resources===================================*/
 
-/*resources login*/
+/*resources-header*/
+
+.resources-header {
+    background: url('../images/uw_resources.png');
+    background-size: 100% auto;
+    height: 90vh;
+    position: relative;
+}
+
+.resources-fade {
+    position: absolute;
+    top: 0;
+    height: 90vh;
+    width: 100%;
+    background-color: var(--uw_lavender);
+    opacity: 0.5;
+}
+
+/*resources-login*/
 
 .login-resources {
     height: 100vh;
-    display: table;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-color: transparent;
 }
 
 .login-form {
-    display: table-cell;
+    display: table ! important;
+    height: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+.login-wrapper {
+    display: table-cell ! important;
     vertical-align: middle;
     background-color: var(--uw_white);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-top: 3px solid var(--uw_orange);
+    padding: 5%;
 }
 
 .login-header {
-    margin-bottom: 2%;
+    margin-bottom: 5%;
     color: var(--uw_orange);
 }
 
