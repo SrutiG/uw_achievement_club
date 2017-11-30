@@ -1,3 +1,17 @@
+function showLogin() {
+    var loginResources = document.getElementById('login-resources');
+    var resourcesText = document.getElementById('resources-text');
+    console.log(loginResources.style.display);
+    if (loginResources.style.display !== '') {
+        loginResources.style.display = '';
+        resourcesText.style.display = 'table';
+    }
+    else {
+        loginResources.style.display = 'table';
+        resourcesText.style.display = 'none';
+    }
+};
+
 function addActiveClass() {
     var navbar = document.getElementById("navbar");
     if (window.location.pathname == '/home' || window.location.pathname == '/about' || window.location.pathname == '/resources') {

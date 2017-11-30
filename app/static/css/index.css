@@ -42,15 +42,15 @@ body {
 }
 
 .uw_button_inverse {
-    color: var(--uw_blue);
-    border: 1px solid var(--uw_blue);
-    background-color: var(--uw_lavender);
+    color: var(--uw_white);
+    border: 1px solid var(--uw_white);
+    background-color: transparent;
 }
 
 .uw_button_inverse:hover {
     color: var(--uw_orange);
     border: 1px solid var(--uw_orange);
-    background-color: var(--uw_lavender);
+    background-color: transparent;
 }
 
 .uw_input {
@@ -127,8 +127,10 @@ body {
 }
 
 .nav-dropdown-icon {
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight: 300;
+    margin-left: 1px;
+    transform: translateY(-0.7px);
 }
 
 .hover-dropdown:hover {
@@ -725,20 +727,42 @@ body {
 .resources-header {
     background: url('../images/uw_resources.png');
     background-size: 100% auto;
-    height: 90vh;
+    height: 100vh;
     position: relative;
 }
 
-.resources-fade {
+.resources-fade, .resources-text {
     position: absolute;
     top: 0;
-    height: 90vh;
+    height: 100vh;
     width: 100%;
+
+}
+
+.resources-fade {
     background-color: var(--uw_lavender);
-    opacity: 0.5;
+    opacity: 0.7;
+}
+
+.resources-text {
+    display:table;
+}
+
+.resources-text-wrapper {
+    display:table-cell;
+    vertical-align: middle;
+    color: var(--uw_white);
+}
+
+.resources-title {
+    margin-bottom: 2%;
 }
 
 /*resources-login*/
+
+#login-resources {
+    display: none;
+}
 
 .login-resources {
     height: 100vh;
@@ -758,7 +782,7 @@ body {
 .login-wrapper {
     display: table-cell ! important;
     vertical-align: middle;
-    background-color: var(--uw_white);
+    background-color: var(--uw_lavender);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-top: 3px solid var(--uw_orange);
     padding: 5%;
@@ -766,16 +790,31 @@ body {
 
 .login-header {
     margin-bottom: 5%;
-    color: var(--uw_orange);
+    color: var(--uw_white);
 }
 
 .login_input {
     border: 0;
     border-radius: 0;
-    background-color: var(--uw_white);
-    border-bottom: 1px solid var(--uw_blue);
-    color: var(--uw_blue);
-    margin-bottom: 3%;
+    background-color: var(--uw_lavender);
+    border-bottom: 1px solid var(--uw_white);
+    color: var(--uw_white);
+    margin-bottom: 4%;
+}
+
+.login_input:focus {
+    color: var(--uw_orange);
+    border-bottom: 1px solid var(--uw_orange);
+}
+
+.cancel-login {
+    color: var(--uw_white);
+}
+
+.cancel-login:hover {
+    cursor: pointer;
+    color: var(--uw_orange);
+    text-decoration: none;
 }
 
 /*===================================footer===================================*/
