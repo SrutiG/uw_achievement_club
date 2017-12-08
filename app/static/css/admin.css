@@ -10,6 +10,7 @@
     --uw_white: #FFF;
     --primary_dark: #212121;
     --primary_light: #EFEFEF;
+    --primary: #BBB;
     --education: #8D9ECE;
     --health: #D54C61;
     --income: #FFC542;
@@ -31,8 +32,49 @@ body {
     overflow-y: scroll;
 }
 
+.admin-dash-item {
+    padding: 25px;
+    display: inline-block;
+}
+
+.admin-dash-sub-header {
+    color: var(--uw_lavender);
+}
+
+.admin-dash-item-wrapper {
+    background-color: var(--uw_white);
+    padding: 25px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
 .uw_lighter {
     font-weight: 300;
+}
+
+.admin-dash-button {
+    border: 1px solid var(--uw_lavender);
+    color: var(--uw_lavender);
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.admin-dash-input {
+    border: 1px solid var(--uw_lavender);
+    color: var(--uw_lavender);
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.admin-dash-input-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.admin-dash-button:hover {
+    background-color: inherit;
+    border: 1px solid var(--uw_orange);
+    color: var(--uw_orange);
+
 }
 
 /*===================================navigation===================================*/
@@ -85,4 +127,29 @@ body {
 .admin-nav-item:hover .admin-nav-text, .admin-nav-item:hover .admin-nav-icon {
     color: var(--uw_orange);
     text-decoration: none;
+}
+
+/*===================================home===================================*/
+
+.home-header-img {
+    width: 400px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.locations-list {
+    height: 150px;
+    overflow-y: scroll;
+    padding: 5px;
+    border: 1px solid var(--uw_lavender);
+    color: var(--uw_lavender);
+}
+
+.achievement-club-location {
+    padding: 5px 0 5px 0;
+    border-bottom: 1px solid var(--primary_light);
+}
+
+.address-input {
+    border-right: 0;
 }

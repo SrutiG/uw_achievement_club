@@ -51,7 +51,11 @@ def mapstyles():
 
 @app.route('/administrator')
 def administrator():
-	return render_template('admin-dash/home.html')
+	with app.open_resource("static/js/ac_locations.json", "r") as data_file:
+		for line in data_file:
+			data_file = line.strip()
+		data = json.loads(data_file)
+	return render_template('admin-dash/home.html', locations=data)
 
 
 
