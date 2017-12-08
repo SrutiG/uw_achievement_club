@@ -31,6 +31,10 @@ body {
     overflow-y: scroll;
 }
 
+.uw_lighter {
+    font-weight: 300;
+}
+
 /*===================================navigation===================================*/
 
 .admin-nav {
@@ -63,15 +67,22 @@ body {
 
 .admin-nav-icon, .admin-nav-text {
     color: var(--uw_lavender);
+
 }
 
 .admin-nav-icon {
     display: inline-block;
     margin-right: 10px;
     top: 0px;
-    font-size: 0.7em;
+    font-size: 0.8em;
 }
 
 .admin-nav-text {
     display: inline-block;
+    font-size: 1.1em;
+}
+
+.admin-nav-item:hover .admin-nav-text, .admin-nav-item:hover .admin-nav-icon {
+    color: var(--uw_orange);
+    text-decoration: none;
 }
