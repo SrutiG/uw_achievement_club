@@ -31,7 +31,7 @@ def resources():
 
 @app.route('/county')
 def county():
-	return render_template('county.html', county='Fulton')
+	return render_template('county.html', county='fulton')
 
 @app.route('/locations')
 def locations():
@@ -48,6 +48,10 @@ def mapstyles():
 		for line in data_file:
 			data += line.strip()
 	return jsonify(data = data)
+
+@app.route('/administrator')
+def administrator():
+	return render_template('admin-dash/home.html')
 
 
 
