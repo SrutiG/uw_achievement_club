@@ -29,6 +29,10 @@ def about():
 def resources():
 	return render_template('resources.html')
 
+@app.route('/county')
+def county():
+	return render_template('county.html', county='fulton')
+
 @app.route('/locations')
 def locations():
 	with app.open_resource("static/js/ac_locations.json", "r") as data_file:
@@ -44,6 +48,17 @@ def mapstyles():
 		for line in data_file:
 			data += line.strip()
 	return jsonify(data = data)
+
+@app.route('/administrator')
+def administrator():
+	with app.open_resource("static/js/ac_locations.json", "r") as data_file:
+		for line in data_file:
+			data_file = line.strip()
+		data = json.loads(data_file)
+	return render_template('admin-dash/home.html', locations=data)
+
+
+
 
 
 

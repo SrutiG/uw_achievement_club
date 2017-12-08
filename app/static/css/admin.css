@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+/*===================================colors===================================*/
+
+:root {
+    --uw_blue: #101B7B;
+    --uw_red: #FF001C;
+    --uw_orange: #FF9A36;
+    --uw_lavender: #767DAC;
+    --uw_white: #FFF;
+    --primary_dark: #212121;
+    --primary_light: #EFEFEF;
+    --primary: #BBB;
+    --education: #8D9ECE;
+    --health: #D54C61;
+    --income: #FFC542;
+    --civic: #8D95AB;
+    --community: #9DAC51;
+    --border_color: var(--uw_orange);
+}
+
+/*===================================general===================================*/
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--primary_light);
+}
+
+.body-content {
+    padding-left: 250px;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.admin-dash-item {
+    padding: 25px;
+    display: inline-block;
+}
+
+.admin-dash-sub-header {
+    color: var(--uw_lavender);
+}
+
+.admin-dash-item-wrapper {
+    background-color: var(--uw_white);
+    padding: 25px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.uw_lighter {
+    font-weight: 300;
+}
+
+.admin-dash-button {
+    border: 1px solid var(--uw_lavender);
+    color: var(--uw_lavender);
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.admin-dash-input {
+    border: 1px solid var(--uw_lavender);
+    color: var(--uw_lavender);
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.admin-dash-input-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.admin-dash-button:hover {
+    background-color: inherit;
+    border: 1px solid var(--uw_orange);
+    color: var(--uw_orange);
+
+}
+
+/*===================================navigation===================================*/
+
+.admin-nav {
+    width: 250px;
+    background-color: var(--uw_white);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.admin-nav-header {
+    padding: 20px 10px 20px 10px;
+    border-bottom: 1px solid var(--primary_light);
+}
+
+.admin-nav-header-text {
+    color: var(--uw_orange);
+}
+
+.admin-nav-item {
+    padding: 10px 20px 10px 20px;
+    border-bottom: 1px solid var(--primary_light);
+}
+
+.admin-nav-row {
+    margin: 0;
+}
+
+.admin-nav-icon, .admin-nav-text {
+    color: var(--uw_lavender);
+
+}
+
+.admin-nav-icon {
+    display: inline-block;
+    margin-right: 10px;
+    top: 0px;
+    font-size: 0.8em;
+}
+
+.admin-nav-text {
+    display: inline-block;
+    font-size: 1.1em;
+}
+
+.admin-nav-item:hover .admin-nav-text, .admin-nav-item:hover .admin-nav-icon {
+    color: var(--uw_orange);
+    text-decoration: none;
+}
+
+/*===================================home===================================*/
+
+.home-header-img {
+    width: 400px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.locations-list {
+    height: 150px;
+    overflow-y: scroll;
+    padding: 5px;
+    border: 1px solid var(--uw_lavender);
+    color: var(--uw_lavender);
+}
+
+.achievement-club-location {
+    padding: 5px 0 5px 0;
+    border-bottom: 1px solid var(--primary_light);
+}
+
+.address-input {
+    border-right: 0;
+}

@@ -1,3 +1,7 @@
+@charset "utf-8";
+
+/*===================================colors===================================*/
+
 :root {
     --uw_blue: #101B7B;
     --uw_red: #FF001C;
@@ -14,12 +18,77 @@
     --border_color: var(--uw_orange);
 }
 
+/*===================================general===================================*/
+
 body {
     font-family: 'Lato', sans-serif;
     background-color: var(--uw_white);
 }
 
-/* navbar */
+.uw_button {
+    color: var(--uw_blue);
+    border: 1px solid var(--uw_blue);
+    background-color: transparent;
+}
+
+.uw_button:hover {
+    color: var(--uw_orange);
+    border: 1px solid var(--uw_orange);
+    background-color: transparent;
+}
+
+.uw_button_input {
+    border-radius: 0px 5px 5px 0px;
+}
+
+.uw_button_inverse {
+    color: var(--uw_white);
+    border: 1px solid var(--uw_white);
+    background-color: transparent;
+}
+
+.uw_button_inverse:hover {
+    color: var(--uw_orange);
+    border: 1px solid var(--uw_orange);
+    background-color: transparent;
+}
+
+.uw_input {
+    border: 0;
+    border-radius: 5px 0 0 5px;
+    background-color: var(--primary_light);
+}
+
+.uw_small {
+    color: var(--white);
+    font-weight: lighter;
+}
+
+.uw_lighter {
+    font-weight: lighter;
+}
+
+.sub-header{
+    font-size: 4em ! important;
+}
+
+.larger-h4 {
+    font-size: 1.4em;
+
+}
+
+@media screen and (max-width:750px) {
+    .uw_input {
+        border-radius: 0px;
+    }
+
+    .uw_button_input {
+        border-radius: 5px;
+    }
+}
+
+/*===================================navbar===================================*/
+
 .navbar {
     position: absolute;
     top: 0;
@@ -38,10 +107,12 @@ body {
     margin-top: 8px;
 }
 
-
-
 .nav-item:not(.active) {
     color: var(--uw_white);
+}
+
+.nav-dropdown-item {
+    margin-bottom: 3px;
 }
 
 .active, .nav-item:hover {
@@ -50,11 +121,33 @@ body {
     text-decoration: none;
 }
 
-/*home page*/
+.counties-dropdown {
+    margin-top: 5px;
+    display: none;
+}
+
+.nav-dropdown-icon {
+    font-size: 0.7em;
+    font-weight: 300;
+    margin-left: 1px;
+    transform: translateY(-0.7px);
+}
+
+.hover-dropdown:hover {
+    cursor: default;
+}
+
+.hover-dropdown:hover .counties-dropdown {
+    display:block;
+}
+
+/*===================================home page===================================*/
+
+/*home page-header*/
+
 .main {
     position: relative;
     background-image: url(../images/uw_home_bkgrd.png);
-    /*background-size: 1700px 544px;*/
     background-size: auto 100%;
     background-position: center;
     height: 90vh;
@@ -83,16 +176,8 @@ body {
     background: transparent;
 }
 
-@media screen and (min-height:600px) {
-    top: 45%;
-}
-
-@media screen and (max-width: 775px) and (min-height: 300px) {
-    .uw-logo-img {
-    }
-}
-
 @media screen and (max-height: 200px) {
+
     .main {
         height: 150vh;
     }
@@ -107,10 +192,9 @@ body {
     color: var(--uw_white) ! important;
     margin-top: 10px ! important;
     font-weight: 300 ! important;
-    /*font-family: 'Enriqueta', sans-serif;*/
 }
 
-/*home page- about*/
+/*home page-about*/
 
 .home-about-bkgrd {
     background: url('../images/atlanta.png');
@@ -130,17 +214,26 @@ body {
     position: relative;
 }
 
-
 .home-about {
     position: absolute;
     background-color: transparent;
     top: 90vh;
-    width: 100vw;
     left: 50%;
     transform: translateX(-50%);
+    width: 100vw;
+    height: 100vh;
+    min-height: 600px;
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-bottom: 0;
     color: var(--uw_blue);
+    display: table;
 }
 
+.home-about-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
 
 .circles {
     margin-top: 2%;
@@ -173,6 +266,7 @@ body {
     .home-about {
         top: 150vh;
     }
+
 }
 
 @media screen and (max-width: 1000px){
@@ -193,12 +287,15 @@ body {
     .circle-text {
         font-size: 1.25em;
     }
+
 }
 
 @media screen and (max-width:450px) {
+
     .circle-text {
         font-size: 1em;
     }
+
 }
 
 /*home page-success*/
@@ -224,6 +321,7 @@ body {
     padding-top: 25px;
     height: 0;
 }
+
 .success-video {
     position: absolute;
     top: 0;
@@ -238,7 +336,6 @@ body {
     left: 0;
     width: 100% ! important;
     height: 100% ! important;
-
 }
 
 .success-video-overlay-text {
@@ -255,7 +352,6 @@ body {
     background-color: var(--uw_orange);
 }
 
-
 .success-video-content {
     display: table;
     background-color: var(--uw_lavender);
@@ -268,7 +364,6 @@ body {
     transform: translate(-50%, -50%);
     width: 75%;
     color: var(--uw_white);
-
 }
 
 .success-video-2 {
@@ -276,19 +371,12 @@ body {
 }
 
 @media screen and (max-width:768px) {
+
     .success-video-1, .success-video-2, .success-video-content {
         padding-bottom: 56.25% ! important;
     }
-}
 
-/*
-.success-video-overlay-purple {
-    background-color: var(--uw_lavender);
 }
-
-.success-video-overlay-orange {
-    background-color: var(--uw_orange);
-}*/
 
 .success-video-1:hover .success-video-overlay, .success-video-1:hover .success-video-overlay-text {
     display: none;
@@ -297,6 +385,7 @@ body {
 .success-video-2:hover .success-video-overlay, .success-video-2:hover .success-video-overlay-text {
     display: none;
 }
+
 /*home page-atl map*/
 
 .home-atl-map {
@@ -317,9 +406,6 @@ body {
 #atlMap {
     height:100vh;
     min-height: 400px;
-}
-
-.atl-map-header {
 }
 
 .map-text {
@@ -375,8 +461,7 @@ body {
     margin-bottom: 5%;
 }
 
-
-/*about page*/
+/*===================================about page===================================*/
 
 /*about page-header*/
 
@@ -384,7 +469,6 @@ body {
     height: 90vh;
     background: url(../images/bricks.png);
     background-size: 100% auto;
-
 }
 
 .about-bkgrd-fade {
@@ -392,7 +476,6 @@ body {
     background-color: var(--uw_lavender);
     position: relative;
     opacity: 0.8;
-
 }
 
 .about-header {
@@ -445,7 +528,6 @@ body {
     background-color: var(--uw_orange);
     opacity: 0.9;
     height: 100vh;
-
 }
 
 .about-content-text {
@@ -454,7 +536,6 @@ body {
     color: var(--uw_blue);
     display: table;
     height: 100vh;
-
 }
 
 .about-content-text-wrapper {
@@ -506,9 +587,11 @@ body {
 .goals-wrapper {
     width: 100%;
 }
+
 .goal-wrapper {
     display: inline-block;
 }
+
 .goal {
     display: table;
     height: 325px;
@@ -549,7 +632,6 @@ body {
 }
 
 .goal:hover .goal-img-wrapper {
-    /*display: none;*/
     height: 50px;
 }
 
@@ -559,7 +641,6 @@ body {
 
 .goal:hover {
     background-color: var(--primary_light);
-    /*border: 2px solid var(--uw_orange);*/
 }
 
 /*about page-success stories*/
@@ -639,35 +720,111 @@ body {
     cursor: default;
 }
 
-/*resources*/
+/*===================================resources===================================*/
+
+/*resources-header*/
+
+.resources-header {
+    background: url('../images/uw_resources.png');
+    background-size: 100% auto;
+    height: 100vh;
+    position: relative;
+}
+
+.resources-fade, .resources-text {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+
+}
+
+.resources-fade {
+    background-color: var(--uw_lavender);
+    opacity: 0.7;
+}
+
+.resources-text {
+    display:table;
+}
+
+.resources-text-wrapper {
+    display:table-cell;
+    vertical-align: middle;
+    color: var(--uw_white);
+}
+
+.resources-title {
+    margin-bottom: 2%;
+}
+
+/*resources-login*/
+
+#login-resources {
+    display: none;
+}
 
 .login-resources {
     height: 100vh;
-    display: table;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-color: transparent;
 }
 
 .login-form {
-    display: table-cell;
+    display: table ! important;
+    height: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+.login-wrapper {
+    display: table-cell ! important;
     vertical-align: middle;
-    background-color: var(--uw_white);
+    background-color: var(--uw_lavender);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-top: 3px solid var(--uw_orange);
+    padding: 5%;
 }
 
 .login-header {
-    margin-bottom: 2%;
-    color: var(--uw_orange);
+    margin-bottom: 5%;
+    color: var(--uw_white);
 }
 
 .login_input {
     border: 0;
     border-radius: 0;
-    background-color: var(--uw_white);
-    border-bottom: 1px solid var(--uw_blue);
-    color: var(--uw_blue);
-    margin-bottom: 3%;
+    background-color: var(--uw_lavender);
+    border-bottom: 1px solid var(--uw_white);
+    color: var(--uw_white);
+    margin-bottom: 4%;
 }
 
+.login_input:focus {
+    color: var(--uw_orange);
+    border-bottom: 1px solid var(--uw_orange);
+}
 
-/*footer*/
+.cancel-login {
+    color: var(--uw_white);
+}
+
+.cancel-login:hover {
+    cursor: pointer;
+    color: var(--uw_orange);
+    text-decoration: none;
+}
+
+/*===================================county===================================*/
+
+.county-img {
+    width:100%;
+    height:auto;
+}
+
+/*===================================footer===================================*/
 
 .uw_footer {
     background-color: var(--uw_blue) ! important;
@@ -690,81 +847,20 @@ body {
 }
 
 @media screen and (max-width:1000px) {
+
     #map {
         display:none;
     }
+
 }
 
 @media screen and (max-width:500px) {
+
     .uw_footer {
         min-height:350px;
     }
-}
-
-
-/*general*/
-
-.uw_button {
-    color: var(--uw_blue);
-    border: 1px solid var(--uw_blue);
-    background-color: transparent;
-}
-
-.uw_button:hover {
-    color: var(--uw_orange);
-    border: 1px solid var(--uw_orange);
-    background-color: transparent;
-}
-
-.uw_button_input {
-    border-radius: 0px 5px 5px 0px;
-}
-
-.uw_button_inverse {
-    color: var(--uw_blue);
-    border: 1px solid var(--uw_blue);
-    background-color: var(--uw_lavender);
-}
-
-.uw_button_inverse:hover {
-    color: var(--uw_orange);
-    border: 1px solid var(--uw_orange);
-    background-color: var(--uw_lavender);
-}
-
-.uw_input {
-    border: 0;
-    border-radius: 5px 0 0 5px;
-    background-color: var(--primary_light);
-}
-
-.uw_small {
-    color: var(--white);
-    font-weight: lighter;
-}
-
-.uw_lighter {
-    font-weight: lighter;
-}
-
-.sub-header{
-    font-size: 4em ! important;
-}
-
-.larger-h4 {
-    font-size: 1.4em;
 
 }
 
-
-@media screen and (max-width:750px) {
-    .uw_input {
-        border-radius: 0px;
-    }
-
-    .uw_button_input {
-        border-radius: 5px;
-    }
-}
 
 

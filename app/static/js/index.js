@@ -1,14 +1,32 @@
+function showLogin() {
+    var loginResources = document.getElementById('login-resources');
+    var resourcesText = document.getElementById('resources-text');
+    console.log(loginResources.style.display);
+    if (loginResources.style.display !== '') {
+        loginResources.style.display = '';
+        resourcesText.style.display = 'table';
+    }
+    else {
+        loginResources.style.display = 'table';
+        resourcesText.style.display = 'none';
+    }
+};
+
 function addActiveClass() {
     var navbar = document.getElementById("navbar");
-    if (window.location.pathname == '/home' || window.location.pathname == '/about') {
+    var a = document.getElementsByClassName('nav-item');
+    if (window.location.pathname == '/home' || window.location.pathname == '/about' || window.location.pathname == '/resources') {
         navbar.style.backgroundColor = "transparent"
     } else {
-        navbar.style.backgroundColor = "var(--uw_blue)"
+        //navbar.style.backgroundColor = "var(--uw_blue)"
+        navbar.style.backgroundColor = "transparent"
+        for (i = 0; i < a.length; i++) {
+            a[i].style.color = "var(--uw_blue)";
+        }
     }
     var location = window.location.pathname;
     location = location.replace('/', '')
     elem = document.getElementById(location);
-    var a = document.getElementsByClassName('nav-item');
     for (i = 0; i < a.length; i++) {
         a[i].classList.remove('active');
     }
