@@ -129,6 +129,60 @@ body {
     text-decoration: none;
 }
 
+/*===================================login===================================*/
+.admin-login {
+    position: relative;
+    height: 100vh;
+}
+
+.admin-login-wrapper {
+    background-color: var(--uw_white);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-top: 2px solid var(--uw_orange)
+}
+
+.admin-login-header-wrapper {
+    border-bottom: 1px double var(--primary_light);
+    padding: 5%;
+}
+
+.admin-login-form-wrapper {
+    padding: 10%;
+}
+
+.admin-login-header {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--uw_lavender);
+}
+
+.admin-login-input {
+    margin-bottom: 10px;
+    border: 0;
+    border-radius: 0;
+    color: var(--uw_lavender);
+    border: 1px solid var(--primary_light);
+    background-color: var(--primary_light);
+}
+
+.admin-login-button {
+    margin-top: 10px;
+    color: var(--uw_white);
+    background-color: var(--uw_lavender);
+    border: 0;
+    font-size: 1em;
+    border-radius: 0;
+}
+
+.admin-login-button:hover {
+    background-color: var(--uw_lavender);
+    color: var(--uw_orange);
+}
+
 /*===================================home===================================*/
 
 .home-header-img {

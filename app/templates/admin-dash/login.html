@@ -1,4 +1,26 @@
-{% extends 'admin-dash/layout.html' %}
-{% block content %}
-<h1>Hello World</h1>
+{% extends 'admin-dash/basic_layout.html' %}
+{% block basic_content %}
+<div>
+    <div class="text-center col-md-12 admin-login">
+        <div class="admin-login-wrapper">
+            <div class="admin-login-header-wrapper">
+                <h4 class="admin-login-header">Administrator Login</h4>
+            </div>
+            <div class="admin-login-form-wrapper">
+                <form method="post">
+                    <div class="row">
+                        <input class="admin-login-input input input-lg col-md-10 col-md-offset-1" type="text" placeholder="username" name="username">
+                    </div>
+                    <div class="row">
+                        <input class="admin-login-input input input-lg col-md-10 col-md-offset-1" type="password" placeholder="password" name="password">
+                    </div>
+                    <div class="row">
+                        <button class="admin-login-button btn btn-lg btn-default col-md-10 col-md-offset-1" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

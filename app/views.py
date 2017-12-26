@@ -51,13 +51,37 @@ def mapstyles():
 
 @app.route('/administrator')
 def administrator():
+	if not session['admin_login']:
+		return redirect('administrator/login')
+	return redirect('administrator/home')
+
+@app.route('/administrator/home')
+def administrator_home():
+	if not session.get('admin_login'):
+		return redirect('administrator/login')
+	success_stories = []
 	with app.open_resource("static/js/ac_locations.json", "r") as data_file:
 		for line in data_file:
 			data_file = line.strip()
-		data = json.loads(data_file)
-	return render_template('admin-dash/home.html', locations=data)
+		locations = json.loads(data_file)
+	with app.open_resource('success_stories.csv', 'r') as csvfile:
+		reader = csv.DictReader(csvfile)
+		for row in reader:
+			success_story = row['Success_Story']
+			success_story = unicode(success_story, 'utf-8')
+			row['Success_Story'] = success_story
+			success_stories.append(row)
+	return render_template('admin-dash/home.html', locations=locations, success_stories=success_stories)
 
-
+@app.route('/administrator/login', methods=['GET','POST'])
+def administrator_login():
+	if request.method == 'POST':
+		username = request.form['username']
+		password = request.form['password']
+		if username == 'test' and password == 'test':
+			session['admin_login'] = True
+			return redirect('administrator/home')
+	return render_template('admin-dash/login.html')
 
 
 
