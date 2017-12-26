@@ -146,7 +146,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-top: 2px solid var(--uw_orange)
+    border-top: 2px solid var(--uw_orange);
+    min-width: 300px;
 }
 
 .admin-login-header-wrapper {
@@ -171,6 +172,7 @@ body {
     color: var(--uw_lavender);
     border: 1px solid var(--primary_light);
     background-color: var(--primary_light);
+    font-size: 1em;
 }
 
 .admin-login-button {
@@ -185,6 +187,12 @@ body {
 .admin-login-button:hover {
     background-color: var(--uw_lavender);
     color: var(--uw_orange);
+}
+
+.login-error {
+    color: var(--uw_orange);
+    font-size: 1em;
+    margin-top: 10px;
 }
 
 /*===================================home===================================*/

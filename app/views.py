@@ -3,6 +3,7 @@ from flask import render_template, request, redirect, session, url_for, jsonify
 import os
 import json
 import csv
+from app import db, models
 
 @app.route('/')
 def index():
@@ -78,10 +79,13 @@ def administrator_login():
 	if request.method == 'POST':
 		username = request.form['username']
 		password = request.form['password']
-		if username == 'test' and password == 'test':
+		query = models.Admin.query.filter_by(username=username).filter_by(password=password).all()
+		if query != []:
 			session['admin_login'] = True
 			return redirect('administrator/home')
-	return render_template('admin-dash/login.html')
+		else:
+			return render_template('admin-dash/login.html', error=True)
+	return render_template('admin-dash/login.html', error=False)
 
 @app.route('/administrator/logout')
 def administrator_logout():
