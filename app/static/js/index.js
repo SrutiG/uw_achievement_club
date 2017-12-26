@@ -1,3 +1,12 @@
+$(document).ready(function() {
+    $("#admin-logout").click(function() {
+        $.get("/administrator/logout")
+          .done(function( data ) {
+            window.location.href = '/administrator/login';
+        });
+    })
+});
+
 function showLogin() {
     var loginResources = document.getElementById('login-resources');
     var resourcesText = document.getElementById('resources-text');

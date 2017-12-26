@@ -109,7 +109,6 @@ body {
 
 .admin-nav-icon, .admin-nav-text {
     color: var(--uw_lavender);
-
 }
 
 .admin-nav-icon {
@@ -127,6 +126,11 @@ body {
 .admin-nav-item:hover .admin-nav-text, .admin-nav-item:hover .admin-nav-icon {
     color: var(--uw_orange);
     text-decoration: none;
+}
+
+#admin-logout {
+    color: var(--primary);
+    cursor: pointer;
 }
 
 /*===================================login===================================*/

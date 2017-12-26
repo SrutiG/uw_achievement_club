@@ -51,7 +51,7 @@ def mapstyles():
 
 @app.route('/administrator')
 def administrator():
-	if not session['admin_login']:
+	if not session.get('admin_login'):
 		return redirect('administrator/login')
 	return redirect('administrator/home')
 
@@ -82,6 +82,11 @@ def administrator_login():
 			session['admin_login'] = True
 			return redirect('administrator/home')
 	return render_template('admin-dash/login.html')
+
+@app.route('/administrator/logout')
+def administrator_logout():
+	session['admin_login'] = False
+	return redirect('administrator/login')
 
 
 
