@@ -203,8 +203,18 @@ body {
     margin-bottom: 15px;
 }
 
+/*===================================locations===================================*/
+
+.home-locations {
+    height: 100vh;
+}
+
+.home-locations-wrapper {
+    height: 100%;
+}
+
 .locations-list {
-    height: 150px;
+    height: calc(100% - 50px);
     overflow-y: scroll;
     padding: 5px;
     border: 1px solid var(--uw_lavender);
@@ -212,10 +222,35 @@ body {
 }
 
 .achievement-club-location {
-    padding: 5px 0 5px 0;
+    padding: 10px;
     border-bottom: 1px solid var(--primary_light);
 }
 
 .address-input {
     border-right: 0;
+}
+
+.add-location {
+    margin-top: 20px;
+    height: 30px;
+}
+
+.location-left {
+    display: inline-block;
+}
+
+.location-right {
+    float:right;
+    display: inline-block;
+}
+
+.location-btn {
+    border: 0;
+    border-radius: 0;
+    color: var(--uw_orange);
+}
+
+.location-btn:hover {
+    background-color: var(--uw_white);
+    color: var(--primary);
 }

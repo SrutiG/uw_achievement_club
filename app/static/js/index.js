@@ -4,7 +4,20 @@ $(document).ready(function() {
           .done(function( data ) {
             window.location.href = '/administrator/login';
         });
-    })
+    });
+
+    $("#add-location-button").click(function() {
+        $.post("/administrator/add_location", {'name':$("#location-name").val(), 'address':$("#location-address").val()})
+          .done(function( data ) {
+            if (data.success == true) {
+                location.reload();
+            } else {
+                window.alert(data.message);
+            }
+        }).error(function(error) {
+            window.alert(error.message);
+        });
+    });
 });
 
 function showLogin() {
@@ -56,4 +69,21 @@ function hideDescript(elem) {
     if (goalDescript.style.display === "table") {
         goalDescript.style.display = "";
     }
+}
+
+function editLocation(locationName) {
+    console.log("editing");
+}
+
+function deleteLocation(locationName) {
+    jQuery.post("/administrator/delete_location", {'name':locationName})
+      .done(function( data ) {
+        if (data.success == true) {
+            location.reload();
+        } else {
+            window.alert(data.message);
+        }
+    }).error(function(error) {
+        window.alert(error.message);
+    });
 }

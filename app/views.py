@@ -4,6 +4,7 @@ import os
 import json
 import csv
 from app import db, models
+from utils import addressToLocation
 
 @app.route('/')
 def index():
@@ -61,10 +62,7 @@ def administrator_home():
 	if not session.get('admin_login'):
 		return redirect('administrator/login')
 	success_stories = []
-	with app.open_resource("static/js/ac_locations.json", "r") as data_file:
-		for line in data_file:
-			data_file = line.strip()
-		locations = json.loads(data_file)
+
 	with app.open_resource('success_stories.csv', 'r') as csvfile:
 		reader = csv.DictReader(csvfile)
 		for row in reader:
@@ -91,6 +89,41 @@ def administrator_login():
 def administrator_logout():
 	session['admin_login'] = False
 	return redirect('administrator/login')
+
+@app.route('/administrator/locations')
+def administrator_locations():
+	if not session.get('admin_login'):
+		return redirect('administrator/login')
+	locations = []
+	locations_query = models.Location.query.all()
+	for location in locations_query:
+		locations.append(location.__dict__)
+	return render_template('admin-dash/locations.html', locations=locations)
+
+@app.route('/administrator/add_location', methods=['POST'])
+def administrator_add_location():
+	address = request.form['address']
+	name = request.form['name']
+	try:
+		loc_vals = addressToLocation(address)
+		county = loc_vals['county']
+		latitude = loc_vals['latitude']
+		longitude = loc_vals['longitude']
+		print "%s %s %s %s"%(address, name, county, str(latitude) + " " + str(longitude))
+		db.session.add(models.Location(name=name, county=county, address=address, latitude=latitude, longitude=longitude))
+		db.session.commit()
+	except ValueError as e:
+		print e
+		return jsonify({"success":False,"message":"Error: invalid address '%s'"%(address), "status_code":400})
+	return jsonify({"success":True,"message":"successful geocode", "status_code":200})
+
+@app.route('/administrator/delete_location', methods=['POST'])
+def administrator_delete_location():
+	name = request.form['name']
+	delete_location = models.Location.query.filter_by(name=name)
+	db.session.delete(delete_location[0])
+	db.session.commit()
+	return jsonify({"success":True,"message":"successful delete", "status_code":200})
 
 
 

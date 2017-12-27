@@ -1,0 +1,16 @@
+<div class="admin-dash-item home-locations col-md-12">
+    <div class="admin-dash-item-wrapper home-locations-wrapper">
+        <ul class="list-unstyled locations-list">
+            {% for location in locations %}
+            {% with location=location %}
+            {% include 'admin-dash/locations/location.html' %}
+            {% endwith %}
+            {% endfor %}
+        </ul>
+        <div class="row form-group admin-dash-input-group add-location">
+            <input id="location-name" class="input input-sm admin-dash-input address-input col-xs-5" type="text" placeholder="name" autocomplete="off">
+            <input id="location-address" class="input input-sm admin-dash-input address-input col-xs-6" type="text" placeholder="address" autocomplete="off">
+            <button id="add-location-button" class="btn btn-sm admin-dash-button col-xs-1"><span class="glyphicon glyphicon-plus"></span></button>
+        </div>
+    </div>
+</div>

@@ -45,6 +45,8 @@ class Location(db.Model):
     name = db.Column(db.String(64))
     address = db.Column(db.String(120))
     county = db.Column(db.Integer, db.ForeignKey('county.id'))
+    latitude = db.Column(db.Integer)
+    longitude = db.Column(db.Integer)
 
     def __repr__(self):
         return '<Location %r>' % (self.name)
