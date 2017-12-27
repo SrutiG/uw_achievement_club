@@ -7,6 +7,7 @@
     --uw_red: #FF001C;
     --uw_orange: #FF9A36;
     --uw_lavender: #767DAC;
+    --uw_lavender_lighter: #eff0f5;
     --uw_white: #FFF;
     --primary_dark: #212121;
     --primary_light: #EFEFEF;
@@ -215,6 +216,7 @@ body {
 
 .home-locations {
     height: 100vh;
+    padding: 0;
 }
 
 .home-locations-wrapper {
@@ -222,25 +224,54 @@ body {
 }
 
 .locations-list {
-    height: calc(100% - 50px);
+    height: calc(100% - 70px);
     overflow-y: scroll;
-    padding: 5px;
-    border: 1px solid var(--uw_lavender);
+    border: 1px solid var(--primary_light);
     color: var(--uw_lavender);
+    width: 100%;
+    padding: 5px 15px 5px 15px;
+    margin-bottom: 0;
+}
+
+.locations-list-item {
+    width: 100%;
+    padding: 0;
+}
+
+.locations-list-item-wrapper {
+    padding: 10px;
 }
 
 .achievement-club-location {
-    padding: 10px;
+    padding: 5px;
     border-bottom: 1px solid var(--primary_light);
+    width: 100%;
 }
 
 .address-input {
-    border-right: 0;
+    background-color: var(--uw_white);
 }
 
 .add-location {
-    margin-top: 20px;
-    height: 30px;
+    padding: 20px;
+    height: 70px;
+    margin-bottom: 0;
+    background-color: var(--uw_white);
+}
+
+.add-location-btn {
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    background-color: var(--uw_orange);
+    color: var(--uw_white);
+    margin-left: 10px;
+    transform: translateY(-2px);
+}
+
+.add-location-btn:hover {
+    color: var(--uw_white);
+    background-color: var(--primary);
 }
 
 .location-left {
@@ -266,8 +297,12 @@ body {
 .edit-location-modal {
     border-radius: 0;
     width: auto;
-    padding: 10%;
+    padding: 5%;
     border-top: 2px solid var(--uw_orange);
+}
+
+.edit-location-modal-dialog {
+    width: 500px;
 }
 
 .edit-location-input {
@@ -325,7 +360,6 @@ body {
     display: table;
     overflow-y: scroll;
     position: relative;
-
 }
 
 .success-story-descript {

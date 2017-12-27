@@ -1,5 +1,5 @@
-<div class="admin-dash-item home-locations col-md-12">
-    <div class="admin-dash-item-wrapper home-locations-wrapper">
+<div class="home-locations col-md-12">
+    <div class="home-locations-wrapper">
         <ul class="list-unstyled locations-list">
             {% for location in locations %}
             {% with location=location %}
@@ -8,9 +8,11 @@
             {% endfor %}
         </ul>
         <div class="row form-group admin-dash-input-group add-location">
-            <input id="location-name" class="input input-sm admin-dash-input address-input col-xs-5" type="text" placeholder="name" autocomplete="off">
-            <input id="location-address" class="input input-sm admin-dash-input address-input col-xs-6" type="text" placeholder="address (street name, city, zip)" autocomplete="off">
-            <button id="add-location-button" class="btn btn-sm admin-dash-button col-xs-1"><span class="glyphicon glyphicon-plus"></span></button>
+            <div class="col-xs-10 col-xs-offset-1">
+                <input style="border-right: 0" id="location-name" class="input input-sm admin-dash-input address-input col-xs-4" type="text" placeholder="name" autocomplete="off">
+                <input id="location-address" class="input input-sm admin-dash-input address-input col-xs-6" type="text" placeholder="address (street name, city, zip)" autocomplete="off">
+                <button id="add-location-button" class="btn btn-sm add-location-btn col-xs-1"><span class="glyphicon glyphicon-plus"></span></button>
+            </div>
         </div>
     </div>
 </div>
