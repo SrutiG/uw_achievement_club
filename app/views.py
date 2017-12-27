@@ -110,7 +110,6 @@ def administrator_add_location():
 		county = loc_vals['county']
 		latitude = loc_vals['latitude']
 		longitude = loc_vals['longitude']
-		print "%s %s %s %s"%(address, name, county, str(latitude) + " " + str(longitude))
 		db.session.add(models.Location(name=name, county=county, address=address, latitude=latitude, longitude=longitude))
 		db.session.commit()
 	except ValueError as e:
@@ -128,6 +127,46 @@ def administrator_delete_location():
 	db.session.delete(delete_location)
 	db.session.commit()
 	return jsonify({"success":True,"message":"successful delete", "status_code":200})
+
+@app.route('/administrator/edit_location', methods=['POST'])
+def administrator_edit_location():
+	name = request.form['name']
+	address = request.form['address']
+	location = models.Location.query.get(name)
+	address_loc = models.Location.query.filter_by(address=address).all()
+	if location == None and address_loc == []:
+		old_location_name = request.form['old-name']
+		location = models.Location.query.get(old_location_name)
+		try:
+			loc_vals = addressToLocation(address)
+			location.name = name
+			location.address = address
+			location.county = loc_vals['county']
+			location.latitude = loc_vals['latitude']
+			location.longitude = loc_vals['longitude']
+			db.session.commit()
+		except ValueError as e:
+			print e
+			return jsonify({"success":False,"message":"Error: invalid address '%s'"%(address), "status_code":400})
+	elif location == None:
+		location = address_loc[0]
+		location.name = name
+		db.session.commit()
+	elif address_loc == []:
+		try:
+			loc_vals = addressToLocation(address)
+			location.address = address
+			location.county = loc_vals['county']
+			location.latitude = loc_vals['latitude']
+			location.longitude = loc_vals['longitude']
+			db.session.commit()
+		except ValueError as e:
+			print e
+			return jsonify({"success":False,"message":"Error: invalid address '%s'"%(address), "status_code":400})
+	else:
+		print "[Info] No location change"
+		return jsonify({"success":True,"message":"location with address already exists, no change made", "status_code":200})
+	return jsonify({"success":True,"message":"successful edit", "status_code":200})
 
 
 

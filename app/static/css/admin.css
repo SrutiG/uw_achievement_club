@@ -103,6 +103,10 @@ body {
     border-bottom: 1px solid var(--primary_light);
 }
 
+.admin-nav-item .active {
+    border-left: 3px solid var(--uw_orange);
+}
+
 .admin-nav-row {
     margin: 0;
 }
@@ -131,6 +135,10 @@ body {
 #admin-logout {
     color: var(--primary);
     cursor: pointer;
+}
+
+#current-location-name {
+    display: none;
 }
 
 /*===================================login===================================*/

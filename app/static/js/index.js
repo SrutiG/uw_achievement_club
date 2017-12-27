@@ -72,9 +72,24 @@ function hideDescript(elem) {
 }
 
 function editLocation(locationName, address) {
-    $("#edit-location-modal").modal('show');
-    $("#edit-location-name").val(locationName);
-    $("#edit-location-address").val(address);
+    if (locationName === undefined && address === undefined) {
+        var oldLocationName = $("#current-location-name").html();
+        jQuery.post("/administrator/edit_location", {'name':$("#edit-location-name").val(), 'address':$("#edit-location-address").val(), 'old-name':oldLocationName})
+              .done(function( data ) {
+                if (data.success == true) {
+                    location.reload();
+                } else {
+                    window.alert(data.message);
+                }
+            }).error(function(error) {
+                window.alert(error.message);
+            });
+    } else {
+        $("#edit-location-modal").modal('show');
+        $("#edit-location-name").val(locationName);
+        $("#edit-location-address").val(address);
+        $("#current-location-name").html(locationName);
+    }
 }
 
 function deleteLocation(locationName) {
