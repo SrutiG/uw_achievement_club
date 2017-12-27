@@ -5,6 +5,7 @@ import json
 import csv
 from app import db, models
 from utils import addressToLocation
+from sqlalchemy import exc
 
 @app.route('/')
 def index():
@@ -115,13 +116,16 @@ def administrator_add_location():
 	except ValueError as e:
 		print e
 		return jsonify({"success":False,"message":"Error: invalid address '%s'"%(address), "status_code":400})
+	except exc.IntegrityError as e:
+		print e
+		return jsonify({"success":False,"message":"Either address '%s' or location name '%s' already exists"%(address,name), "status_code":400})
 	return jsonify({"success":True,"message":"successful geocode", "status_code":200})
 
 @app.route('/administrator/delete_location', methods=['POST'])
 def administrator_delete_location():
 	name = request.form['name']
-	delete_location = models.Location.query.filter_by(name=name)
-	db.session.delete(delete_location[0])
+	delete_location = models.Location.query.get(name)
+	db.session.delete(delete_location)
 	db.session.commit()
 	return jsonify({"success":True,"message":"successful delete", "status_code":200})
 

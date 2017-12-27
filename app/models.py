@@ -19,8 +19,7 @@ class Admin(db.Model):
         return '<Admin %r>' % (self.username)
 
 class County(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(64), index=True, unique=True)
+    name = db.Column(db.String(64), index=True, unique=True, primary_key=True)
     headline = db.Column(db.String(1000))
     content = db.Column(db.String(10000))
 
@@ -29,22 +28,20 @@ class County(db.Model):
 
 
 class SuccessStory(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(64))
-    last_name = db.Column(db.String(64))
+    first_name = db.Column(db.String(64), primary_key=True)
+    last_name = db.Column(db.String(64), primary_key=True)
     video_link = db.Column(db.String(120))
     image = db.Column(db.String(120))
     story = db.Column(db.String(1000))
-    county = db.Column(db.Integer, db.ForeignKey('county.id'))
+    county = db.Column(db.String(64), db.ForeignKey('county.name'))
 
     def __repr__(self):
         return '<SuccessStory %r>' % (self.first_name + ' ' + self.last_name)
 
 class Location(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(64))
-    address = db.Column(db.String(120))
-    county = db.Column(db.Integer, db.ForeignKey('county.id'))
+    name = db.Column(db.String(64), primary_key=True)
+    address = db.Column(db.String(120), unique=True)
+    county = db.Column(db.String(64), db.ForeignKey('county.name'))
     latitude = db.Column(db.Integer)
     longitude = db.Column(db.Integer)
 
