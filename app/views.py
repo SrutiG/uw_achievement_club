@@ -71,7 +71,7 @@ def administrator_home():
 			success_story = unicode(success_story, 'utf-8')
 			row['Success_Story'] = success_story
 			success_stories.append(row)
-	return render_template('admin-dash/home.html', locations=locations, success_stories=success_stories, username=session.get('admin_user'))
+	return render_template('admin-dash/home.html', success_stories=success_stories, username=session.get('admin_user'))
 
 @app.route('/administrator/login', methods=['GET','POST'])
 def administrator_login():
@@ -101,6 +101,20 @@ def administrator_locations():
 	for location in locations_query:
 		locations.append(location.__dict__)
 	return render_template('admin-dash/locations.html', locations=locations, username=session.get('admin_user'))
+
+@app.route('/administrator/success_stories')
+def administrator_success_stories():
+	if not session.get('admin_login'):
+		return redirect('administrator/login')
+	success_stories = []
+	with app.open_resource('success_stories.csv', 'r') as csvfile:
+		reader = csv.DictReader(csvfile)
+		for row in reader:
+			success_story = row['Success_Story']
+			success_story = unicode(success_story, 'utf-8')
+			row['Success_Story'] = success_story
+			success_stories.append(row)
+	return render_template('admin-dash/success_stories.html', username=session.get('admin_user'), success_stories=success_stories)
 
 @app.route('/administrator/add_location', methods=['POST'])
 def administrator_add_location():
