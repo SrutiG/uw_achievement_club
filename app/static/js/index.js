@@ -71,8 +71,10 @@ function hideDescript(elem) {
     }
 }
 
-function editLocation(locationName) {
-    console.log("editing");
+function editLocation(locationName, address) {
+    $("#edit-location-modal").modal('show');
+    $("#edit-location-name").val(locationName);
+    $("#edit-location-address").val(address);
 }
 
 function deleteLocation(locationName) {

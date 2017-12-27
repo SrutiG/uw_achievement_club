@@ -254,3 +254,41 @@ body {
     background-color: var(--uw_white);
     color: var(--primary);
 }
+
+.edit-location-modal {
+    border-radius: 0;
+    width: auto;
+    padding: 10%;
+    border-top: 2px solid var(--uw_orange);
+}
+
+.edit-location-input {
+    margin-bottom: 10px;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid var(--uw_lavender);
+    color: var(--uw_lavender);
+}
+
+.edit-location-btn {
+    border-radius: 0;
+    margin-top: 20px;
+}
+
+.close-modal {
+    background-color: var(--primary_light);
+    color: var(--uw_lavender);
+}
+
+.save-changes {
+    background-color: var(--uw_lavender);
+    color: var(--uw_white);
+}
+
+.save-changes:hover {
+    background-color: var(--uw_lavender);
+}
+
+.edit-location-btn:hover {
+    color: var(--uw_orange);
+}
