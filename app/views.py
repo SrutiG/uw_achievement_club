@@ -71,7 +71,7 @@ def administrator_home():
 			success_story = unicode(success_story, 'utf-8')
 			row['Success_Story'] = success_story
 			success_stories.append(row)
-	return render_template('admin-dash/home.html', locations=locations, success_stories=success_stories)
+	return render_template('admin-dash/home.html', locations=locations, success_stories=success_stories, username=session.get('admin_user'))
 
 @app.route('/administrator/login', methods=['GET','POST'])
 def administrator_login():
@@ -81,6 +81,7 @@ def administrator_login():
 		query = models.Admin.query.filter_by(username=username).filter_by(password=password).all()
 		if query != []:
 			session['admin_login'] = True
+			session['admin_user'] = query[0].username
 			return redirect('administrator/home')
 		else:
 			return render_template('admin-dash/login.html', error=True)
@@ -99,7 +100,7 @@ def administrator_locations():
 	locations_query = models.Location.query.all()
 	for location in locations_query:
 		locations.append(location.__dict__)
-	return render_template('admin-dash/locations.html', locations=locations)
+	return render_template('admin-dash/locations.html', locations=locations, username=session.get('admin_user'))
 
 @app.route('/administrator/add_location', methods=['POST'])
 def administrator_add_location():
