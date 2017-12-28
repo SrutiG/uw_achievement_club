@@ -377,10 +377,16 @@ body {
 /*===================================success stories===================================*/
 
 .success-story-item {
-    height: 50vh;
+    height: calc(50vh - 10px);
+    padding: 10px;
     min-height: 300px;
     min-width: 200px;
     color: var(--uw_lavender);
+}
+
+.success-stories-wrapper {
+    padding: 10px;
+    height: 100%;
 }
 
 .success-story-items {

@@ -1,12 +1,14 @@
 {% extends 'admin-dash/layout.html' %}
 {% block content %}
 
-{% include 'admin-dash/success_stories/add_story.html'%}
 
-{% for story in success_stories %}
-{% with story=story %}
-{% include 'admin-dash/success_stories/success_story.html' %}
-{% endwith %}
-{% endfor %}
+<div class="success-stories-wrapper">
+    {% include 'admin-dash/success_stories/add_story.html'%}
+    {% for story in success_stories %}
+    {% with story=story %}
+    {% include 'admin-dash/success_stories/success_story.html' %}
+    {% endwith %}
+    {% endfor %}
+</div>
 
 {% endblock %}
