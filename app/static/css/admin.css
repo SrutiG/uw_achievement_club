@@ -78,6 +78,20 @@ body {
 
 }
 
+.close-modal {
+    background-color: var(--primary_light);
+    color: var(--uw_lavender);
+}
+
+.save-changes {
+    background-color: var(--uw_lavender);
+    color: var(--uw_white);
+}
+
+.save-changes:hover {
+    background-color: var(--uw_lavender);
+}
+
 /*===================================navigation===================================*/
 
 .admin-nav {
@@ -224,13 +238,17 @@ body {
 }
 
 .locations-list {
-    height: calc(100% - 70px);
+    height: 100%;
     overflow-y: scroll;
     border: 1px solid var(--primary_light);
     color: var(--uw_lavender);
     width: 100%;
     padding: 5px 15px 5px 15px;
     margin-bottom: 0;
+}
+
+.bottom-location-margin {
+    height: 70px;
 }
 
 .locations-list-item {
@@ -257,9 +275,14 @@ body {
     height: 70px;
     margin-bottom: 0;
     background-color: var(--uw_white);
-    box-shadow: 14px 0px 0px 0px rgba(0,0,0,0.25), 10px 0px 0px 0px rgba(0,0,0,0.22);
-    border: 0;
+    border-top: 2px solid var(--uw_orange);
     z-index: 999;
+    position: fixed;
+    top: calc(100% - 70px);
+    left: 50%;
+    transform: translateX(calc(-50% + 125px));
+    min-width: 600px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .add-location-btn {
@@ -268,8 +291,8 @@ body {
     width: 35px;
     background-color: var(--uw_orange);
     color: var(--uw_white);
-    margin-left: 10px;
-    transform: translateY(-2px);
+    margin: auto;
+    transform: translateY(-3px);
 }
 
 .add-location-btn:hover {
@@ -319,20 +342,6 @@ body {
 .edit-location-btn {
     border-radius: 0;
     margin-top: 20px;
-}
-
-.close-modal {
-    background-color: var(--primary_light);
-    color: var(--uw_lavender);
-}
-
-.save-changes {
-    background-color: var(--uw_lavender);
-    color: var(--uw_white);
-}
-
-.save-changes:hover {
-    background-color: var(--uw_lavender);
 }
 
 .edit-location-btn:hover {
@@ -413,10 +422,20 @@ body {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
+.add-story-btn:selected, .add-story-btn:visited, .add-story-btn:link {
+    background-color: var(--uw_orange) ! important;
+    color: var(--uw_white) ! important;
+}
+
 .add-story-btn:hover {
     background-color: var(--uw_orange);
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     color: var(--uw_white);
+}
+
+.add-story-btn:active {
+    background-color: var(--uw_orange) ! important;
+    color: var(--uw_white) ! important;
 }
 
 .fixed-edit-trash {
@@ -446,3 +465,50 @@ body {
     color: var(--primary);
 }
 
+.success-story-modal-dialog {
+    width: 80%;
+}
+
+.success-story-modal {
+    width: 100%;
+    border-radius: 0;
+    border-top: 2px solid var(--uw_orange);
+    padding: 3%;
+}
+
+.add-edit-story-btn {
+    border-radius: 0;
+    margin-top: 20px;
+}
+
+.add-edit-story-btn:hover {
+    color: var(--uw_orange);
+}
+
+#crop-success-button {
+    display: none;
+}
+
+#upload-success-img {
+    display: none;
+}
+
+.show-success-img-wrapper {
+    width: 300px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#show-success-img {
+    width: 100%;
+    height: auto;
+}
+
+#cropped-success-img {
+    width: 200px;
+    height: 200px;
+}
+
+#success-photo {
+    margin: auto;
+}

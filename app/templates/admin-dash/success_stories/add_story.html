@@ -2,9 +2,11 @@
     <div class="text-center success-story-item-wrapper">
         <div class="success-story-item-content">
             <div class="success-story-item-center">
-                <button class="btn btn-lg btn-default add-story-btn"><span class="glyphicon glyphicon-plus add-glyph"></span></button>
+                <button onclick="openSuccessModal()" data-toggle="modal" data-target="#success-story-modal" class="add-story-btn"><span class="glyphicon glyphicon-plus add-glyph"></span></button>
                 <h3>Add Story</h3>
             </div>
         </div>
     </div>
 </div>
+
+{% include 'admin-dash/success_stories/add_edit_modal.html' %}
