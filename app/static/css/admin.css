@@ -389,6 +389,11 @@ body {
 .success-story-item-wrapper {
     height: 100%;
     padding: 0;
+    border-top: 2px solid var(--uw_orange);
+}
+
+.add-story-wrapper {
+    border-top: 0;
 }
 
 .success-story-item-content {
@@ -428,9 +433,13 @@ body {
 
 .success-story-item-center {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: top;
     height: 100%;
     padding: 8%;
+}
+
+.add-story-item-center {
+    vertical-align: middle;
 }
 
 .add-story-btn {
@@ -466,9 +475,10 @@ body {
 
 .fixed-edit-trash {
     position: absolute;
-    top: 0;
+    top: 100%;
     left: 0;
     width: 100%;
+    transform: translateY(-100%);
 }
 
 .edit-delete-story {
