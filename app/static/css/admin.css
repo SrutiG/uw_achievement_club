@@ -295,15 +295,15 @@ body {
 }
 
 .add-location {
-    padding: 20px;
-    height: 70px;
+    padding: 10px;
+    height: 50px;
     margin-bottom: 0;
     background: linear-gradient(to bottom, var(--uw_white), var(--primary_light));
     /*background-color: var(--uw_white);*/
     border-top: 2px solid var(--uw_orange);
     z-index: 999;
     position: fixed;
-    top: calc(100% - 70px);
+    top: calc(100% - 50px);
     left: 50%;
     transform: translateX(calc(-50% + 125px));
     min-width: 600px;
@@ -312,12 +312,13 @@ body {
 
 .add-location-btn {
     border-radius: 50%;
-    height: 35px;
-    width: 35px;
+    height: 30px;
+    width: 30px;
+    font-size: 0.7em;
     background-color: var(--uw_orange);
     color: var(--uw_white);
     margin: auto;
-    transform: translateY(-3px);
+    transform: translateY(-1px, 1px);
 }
 
 .add-location-btn:hover {
