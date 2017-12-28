@@ -1,4 +1,4 @@
-<div class="admin-dash-item col-md-3 success-story-item">
+<div class="admin-dash-item col-xl-2 col-md-3 col-xs-4 success-story-item">
     <div class="admin-dash-item-wrapper success-story-item-wrapper">
         <div class="success-story-item-content">
             <div class="fixed-edit-trash">
@@ -8,12 +8,12 @@
                 </div>
             </div>
             <div class="success-story-item-center">
-                <div class="col-xs-12 success-story-items">
-                    <div class="col-xs-3 success-story-items">
+                <div class="col-xs-12 success-story-items success-story-header">
+                    <div class="col-xs-5 success-story-items">
                         <img class="success-story-img" height="50" width="50" src="{{ url_for('static', filename='images/success_story/' + story['Photo']) }}">
                     </div>
-                    <div class="col-xs-9 success-story-items">
-                        <h4 class="col-xs-9">{{ story.Name }}</h4>
+                    <div class="col-xs-7 success-story-items">
+                        <h4 class="success-story-name">{{ story.Name }}</h4>
                     </div>
                 </div>
                 <h6 class="story-sub-detail"><span style="width:16%;" class="glyphicon glyphicon-facetime-video"></span>www.youtube.com</h6>
@@ -23,7 +23,7 @@
                         <span class="glyphicon glyphicon-book">&nbsp;</span>
                     </div>
                     <div class="col-xs-10 descript-text">
-                        <h6 style="margin-top: 0;">{{ story.Success_Story }}</h6>
+                        <h6 style="margin-top: 0;">{{ story.Success_Story | truncate(125) }}</h6>
                     </div>
                 </div>
             </div>

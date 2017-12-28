@@ -137,8 +137,6 @@ function deleteLocation(locationName) {
 
 function readURL(input) {
     $("#show-success-img").cropper('destroy');
-    //$("#cropped-success-img").attr('src', '#');
-    $("#upload-success-img").hide();
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
@@ -160,7 +158,6 @@ function openSuccessModal() {
     $("#show-success-img").cropper('destroy');
     $("#show-success-img").attr('src', "#");
     $("#crop-success-button").hide();
-    //$("#cropped-success-img").attr('src', '#');
-    $("#upload-success-img").hide();
+    $("#cropped-success-img").attr('src', '/static/images/success_story/default_user_img.png');
 }
 

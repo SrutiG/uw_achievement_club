@@ -8,13 +8,14 @@
 
 <div class="modal fade" id="success-story-modal" tabindex="-1" role="dialog" aria-labelledby="success-story-modal-label" aria-hidden="true">
     <div class="modal-dialog success-story-modal-dialog" role="document">
-        <div class="modal-content text-center success-story-modal container">
+        <div class="modal-content success-story-modal container">
             <div class="modal-body">
                 <form method="post" enctype="multipart/form-data" id="success-story-form" class="success-story-form">
-                    <div class="col-xs-4">
+                    <div class="col-xs-4 text-center">
                         <div class="form-group row">
                             <img id="cropped-success-img" name="cropped-success-img" src="{{ url_for('static', filename='images/success_story/default_user_img.png') }}" alt="">
                         </div>
+                        <label>Edit Image</label>
                         <div class="form-group row">
                             <input type="file" onchange="readURL(this)" id="success-photo" name="success-photo" autocomplete="off">
                         </div>
@@ -24,14 +25,29 @@
                         <div class="form-group row">
                             <button type="button" class="btn-default btn" id="crop-success-button">Crop</button>
                         </div>
-                        <div class="form-group row">
-                            <button type="button" class="btn-default btn-lg btn" id="upload-success-img">Upload</button>
-                        </div>
                     </div>
-                    <div class="col-xs-8">
-                        <div class="form-group row">
-                            <input class="input input-lg" type="text" placeholder="First Name">
-                            <input class="input input-lg" type="text" placeholder="Last Name">
+                    <div class="col-xs-7 story-form-options">
+                        <label>Name: </label>
+                        <div class="form-group row story-form-option">
+                            <input class="success-modal-input input input-md" type="text" placeholder="First Name">
+                            <input class="success-modal-input input input-md" type="text" placeholder="Last Name">
+                        </div>
+                        <label>YouTube Video (Optional): </label>
+                        <div class="form-group row story-form-option">
+                            <input class="success-modal-input input input-md" type="text" placeholder="Link">
+                        </div>
+                        <label>County: </label>
+                        <div class="form-group row story-form-option">
+                            <select class="input input-md">
+                                <option value="Fulton">Fulton</option>
+                                <option value="Gwinnett">Gwinnett</option>
+                                <option value="Cobb">Cobb</option>
+                                <option value="Dekalb">Dekalb</option>
+                            </select>
+                        </div>
+                        <label>Story: </label>
+                        <div class="form-group row story-form-option">
+                            <textarea class="input input-md story-textarea"></textarea>
                         </div>
                     </div>
                     <div class="col-md-8 col-md-offset-2">

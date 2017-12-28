@@ -353,7 +353,7 @@ body {
 .success-story-item {
     height: 50vh;
     min-height: 300px;
-    min-width: 250px;
+    min-width: 200px;
     color: var(--uw_lavender);
 }
 
@@ -376,11 +376,11 @@ body {
 
 .success-story-descript {
     margin-top: 0;
-    height: 100px;
 }
 
 .success-story-img {
     float: left;
+    margin-right: 10px;
 }
 
 .story-sub-detail {
@@ -405,7 +405,7 @@ body {
     display: table-cell;
     vertical-align: middle;
     height: 100%;
-    padding: 10%;
+    padding: 8%;
 }
 
 .add-story-btn {
@@ -474,6 +474,7 @@ body {
     border-radius: 0;
     border-top: 2px solid var(--uw_orange);
     padding: 3%;
+    color: var(--uw_lavender);
 }
 
 .add-edit-story-btn {
@@ -505,10 +506,40 @@ body {
 }
 
 #cropped-success-img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
 }
 
 #success-photo {
     margin: auto;
+}
+
+.story-form-options {
+    padding: 0;
+    margin-left: 15px;
+    display: inline-block;
+}
+
+.story-form-option {
+    margin-left: 0;
+}
+
+.story-textarea {
+    height: 200px;
+    width: 100%;
+    border: 1px solid var(--uw_lavender);
+}
+
+.success-modal-input {
+    border: 0;
+    border-bottom: 1px solid var(--uw_lavender);
+    border-radius: 0;
+}
+
+.success-story-header {
+    margin-bottom: 10px;
+}
+
+.success-story-name {
+    margin-bottom: 0;
 }
