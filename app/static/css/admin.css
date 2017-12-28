@@ -274,7 +274,8 @@ body {
     padding: 20px;
     height: 70px;
     margin-bottom: 0;
-    background-color: var(--uw_white);
+    background: linear-gradient(to bottom, var(--uw_white), var(--primary_light));
+    /*background-color: var(--uw_white);*/
     border-top: 2px solid var(--uw_orange);
     z-index: 999;
     position: fixed;
