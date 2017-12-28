@@ -3,7 +3,7 @@
         <div class="success-story-item-content">
             <div class="fixed-edit-trash">
                 <div class="btn-group edit-delete-story">
-                    <button class="btn-sm btn-default story-btn"><span class="glyphicon glyphicon-pencil"></span></button>
+                    <button onclick='editSuccessModal("{{ story.Name }}".split(" ")[0], "{{ story.Name }}".split(" ")[1], "{{ story.Photo }}", "Fulton", "www.youtube.com", "{{ story.Success_Story }}" )' class="btn-sm btn-default story-btn"><span class="glyphicon glyphicon-pencil"></span></button>
                     <button class="btn-sm btn-default story-btn"><span class="glyphicon glyphicon-trash"></span></button>
                 </div>
             </div>

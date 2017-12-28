@@ -159,5 +159,20 @@ function openSuccessModal() {
     $("#show-success-img").attr('src', "#");
     $("#crop-success-button").hide();
     $("#cropped-success-img").attr('src', '/static/images/success_story/default_user_img.png');
+    $("#success-first-name").val(null);
+    $("#success-last-name").val(null);
+    $("#success-story-county").val('Fulton');
+    $("#success-story-text").val(null);
+    $("#success-video-link").val(null);
+}
+
+function editSuccessModal(first_name, last_name, image, county, link, text) {
+    $("#success-first-name").val(first_name);
+    $("#success-last-name").val(last_name);
+    $("#success-story-county").val(county);
+    $("#success-story-text").val(text);
+    $("#success-video-link").val(link);
+    $("#cropped-success-img").attr('src', '/static/images/success_story/' + image);
+    $("#success-story-modal").modal('show');
 }
 

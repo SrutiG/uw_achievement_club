@@ -282,7 +282,7 @@ body {
     left: 50%;
     transform: translateX(calc(-50% + 125px));
     min-width: 600px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 .add-location-btn {
@@ -473,7 +473,7 @@ body {
     width: 100%;
     border-radius: 0;
     border-top: 2px solid var(--uw_orange);
-    padding: 3%;
+    padding: 2%;
     color: var(--uw_lavender);
 }
 
@@ -522,11 +522,13 @@ body {
 
 .story-form-option {
     margin-left: 0;
+    margin-bottom: 20px;
 }
 
 .story-textarea {
-    height: 200px;
+    height: 150px;
     width: 100%;
+    padding: 10px;
     border: 1px solid var(--uw_lavender);
 }
 
@@ -539,6 +541,12 @@ body {
 .success-story-header {
     margin-bottom: 15px;
     height: 50px;
+}
+
+.success-form-header {
+    margin-bottom: 0;
+    font-size: 0.8em;
+    color: var(--uw_blue);
 }
 
 .success-story-header-wrapper {
