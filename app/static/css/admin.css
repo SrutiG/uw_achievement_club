@@ -9,7 +9,7 @@
     --uw_lavender: #767DAC;
     --uw_lavender_lighter: #eff0f5;
     --uw_white: #FFF;
-    --primary_dark: #212121;
+    --primary_dark: #333;
     --primary_light: #EFEFEF;
     --primary: #BBB;
     --education: #8D9ECE;
@@ -257,11 +257,15 @@ body {
 }
 
 .num-locations {
-    background: linear-gradient(to right, var(--uw_blue), var(--uw_lavender));
+    background: linear-gradient(to right, var(--uw_lavender), var(--uw_lavender));
 }
 
 .counties-locations {
     background: linear-gradient(to right, var(--uw_red), var(--uw_orange));
+}
+
+.counties-states {
+    background: linear-gradient(to right, var(--uw_blue), var(--uw_blue));
 }
 
 .locations-stat {
