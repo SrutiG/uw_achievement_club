@@ -447,8 +447,8 @@ body {
     border-radius: 50%;
     display: inline-block;
     z-index: 99;
-    height: 75px;
-    width: 75px;
+    height: 60px;
+    width: 60px;
     color: var(--uw_white);
     background-color: var(--uw_orange);
     text-align: center;
