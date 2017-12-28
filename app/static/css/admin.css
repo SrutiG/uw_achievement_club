@@ -377,15 +377,15 @@ body {
 /*===================================success stories===================================*/
 
 .success-story-item {
-    height: calc(50vh - 10px);
-    padding: 10px;
+    height: calc(50vh - 12.5px);
+    padding: 15px;
     min-height: 300px;
     min-width: 200px;
     color: var(--uw_lavender);
 }
 
 .success-stories-wrapper {
-    padding: 10px;
+    padding: 15px;
     height: 100%;
 }
 
