@@ -256,6 +256,26 @@ body {
     padding: 0;
 }
 
+.num-locations {
+    background: linear-gradient(to right, var(--uw_blue), var(--uw_lavender));
+}
+
+.counties-locations {
+    background: linear-gradient(to right, var(--uw_red), var(--uw_orange));
+}
+
+.locations-stat {
+    color: var(--uw_white);
+}
+
+.locations-header {
+    font-size: 3.5em;
+}
+
+.locations-sub-header {
+    font-size: 1em;
+}
+
 .locations-list-item-wrapper {
     padding: 10px;
 }

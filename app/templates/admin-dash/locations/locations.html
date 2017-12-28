@@ -1,6 +1,22 @@
 <div class="home-locations col-md-12">
     <div class="home-locations-wrapper">
         <ul class="list-unstyled locations-list inline">
+            <li class="achievement-club-location locations-stat col-sm-6 text-center">
+                <div class="admin-dash-item locations-list-item">
+                    <div class="admin-dash-item-wrapper num-locations locations-list-item-wrapper">
+                        <h1 class="locations-header">{{ locations|length }}</h1>
+                        <h6 class="locations-sub-header">locations</h6>
+                    </div>
+                </div>
+            </li>
+            <li class="achievement-club-location locations-stat col-sm-6 text-center">
+                <div class="admin-dash-item locations-list-item">
+                    <div class="admin-dash-item-wrapper counties-locations locations-list-item-wrapper">
+                        <h1 class="locations-header">4</h1>
+                        <h6 class="locations-sub-header">counties</h6>
+                    </div>
+                </div>
+            </li>
             {% for location in locations %}
             {% with location=location %}
             {% include 'admin-dash/locations/location.html' %}
