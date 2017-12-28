@@ -263,7 +263,7 @@ body {
 .achievement-club-location {
     padding: 5px;
     border-bottom: 1px solid var(--primary_light);
-    width: 100%;
+    display: inline-block;
 }
 
 .address-input {

@@ -1,12 +1,12 @@
 <div class="home-locations col-md-12">
     <div class="home-locations-wrapper">
-        <ul class="list-unstyled locations-list">
+        <ul class="list-unstyled locations-list inline">
             {% for location in locations %}
             {% with location=location %}
             {% include 'admin-dash/locations/location.html' %}
             {% endwith %}
             {% endfor %}
-            <li class="bottom-location-margin"></li>
+            <li class="bottom-location-margin col-md-12"></li>
         </ul>
         <div class="row form-group admin-dash-input-group add-location">
             <div class="col-xs-10 col-xs-offset-1">
