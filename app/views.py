@@ -3,6 +3,9 @@ from flask import render_template, request, redirect, session, url_for, jsonify
 import os
 import json
 import csv
+from app import db, models
+from utils import addressToLocation
+from sqlalchemy import exc
 
 @app.route('/')
 def index():
@@ -51,7 +54,7 @@ def mapstyles():
 
 @app.route('/administrator')
 def administrator():
-	if not session['admin_login']:
+	if not session.get('admin_login'):
 		return redirect('administrator/login')
 	return redirect('administrator/home')
 
@@ -60,10 +63,7 @@ def administrator_home():
 	if not session.get('admin_login'):
 		return redirect('administrator/login')
 	success_stories = []
-	with app.open_resource("static/js/ac_locations.json", "r") as data_file:
-		for line in data_file:
-			data_file = line.strip()
-		locations = json.loads(data_file)
+
 	with app.open_resource('success_stories.csv', 'r') as csvfile:
 		reader = csv.DictReader(csvfile)
 		for row in reader:
@@ -71,17 +71,117 @@ def administrator_home():
 			success_story = unicode(success_story, 'utf-8')
 			row['Success_Story'] = success_story
 			success_stories.append(row)
-	return render_template('admin-dash/home.html', locations=locations, success_stories=success_stories)
+	return render_template('admin-dash/home.html', success_stories=success_stories, username=session.get('admin_user'))
 
 @app.route('/administrator/login', methods=['GET','POST'])
 def administrator_login():
 	if request.method == 'POST':
 		username = request.form['username']
 		password = request.form['password']
-		if username == 'test' and password == 'test':
+		query = models.Admin.query.filter_by(username=username).filter_by(password=password).all()
+		if query != []:
 			session['admin_login'] = True
+			session['admin_user'] = query[0].username
 			return redirect('administrator/home')
-	return render_template('admin-dash/login.html')
+		else:
+			return render_template('admin-dash/login.html', error=True)
+	return render_template('admin-dash/login.html', error=False)
+
+@app.route('/administrator/logout')
+def administrator_logout():
+	session['admin_login'] = False
+	return redirect('administrator/login')
+
+@app.route('/administrator/locations')
+def administrator_locations():
+	if not session.get('admin_login'):
+		return redirect('administrator/login')
+	locations = []
+	locations_query = models.Location.query.all()
+	for location in locations_query:
+		locations.append(location.__dict__)
+	return render_template('admin-dash/locations.html', locations=locations, username=session.get('admin_user'))
+
+@app.route('/administrator/success_stories')
+def administrator_success_stories():
+	if not session.get('admin_login'):
+		return redirect('administrator/login')
+	success_stories = []
+	with app.open_resource('success_stories.csv', 'r') as csvfile:
+		reader = csv.DictReader(csvfile)
+		for row in reader:
+			success_story = row['Success_Story']
+			success_story = unicode(success_story, 'utf-8')
+			row['Success_Story'] = success_story
+			success_stories.append(row)
+	return render_template('admin-dash/success_stories.html', username=session.get('admin_user'), success_stories=success_stories)
+
+@app.route('/administrator/add_location', methods=['POST'])
+def administrator_add_location():
+	address = request.form['address']
+	name = request.form['name']
+	try:
+		loc_vals = addressToLocation(address)
+		county = loc_vals['county']
+		latitude = loc_vals['latitude']
+		longitude = loc_vals['longitude']
+		db.session.add(models.Location(name=name, county=county, address=address, latitude=latitude, longitude=longitude))
+		db.session.commit()
+	except ValueError as e:
+		print e
+		return jsonify({"success":False,"message":"Error: invalid address '%s'"%(address), "status_code":400})
+	except exc.IntegrityError as e:
+		print e
+		return jsonify({"success":False,"message":"Either address '%s' or location name '%s' already exists"%(address,name), "status_code":400})
+	return jsonify({"success":True,"message":"successful geocode", "status_code":200})
+
+@app.route('/administrator/delete_location', methods=['POST'])
+def administrator_delete_location():
+	name = request.form['name']
+	delete_location = models.Location.query.get(name)
+	db.session.delete(delete_location)
+	db.session.commit()
+	return jsonify({"success":True,"message":"successful delete", "status_code":200})
+
+@app.route('/administrator/edit_location', methods=['POST'])
+def administrator_edit_location():
+	name = request.form['name']
+	address = request.form['address']
+	location = models.Location.query.get(name)
+	address_loc = models.Location.query.filter_by(address=address).all()
+	if location == None and address_loc == []:
+		old_location_name = request.form['old-name']
+		location = models.Location.query.get(old_location_name)
+		try:
+			loc_vals = addressToLocation(address)
+			location.name = name
+			location.address = address
+			location.county = loc_vals['county']
+			location.latitude = loc_vals['latitude']
+			location.longitude = loc_vals['longitude']
+			db.session.commit()
+		except ValueError as e:
+			print e
+			return jsonify({"success":False,"message":"Error: invalid address '%s'"%(address), "status_code":400})
+	elif location == None:
+		location = address_loc[0]
+		location.name = name
+		db.session.commit()
+	elif address_loc == []:
+		try:
+			loc_vals = addressToLocation(address)
+			location.address = address
+			location.county = loc_vals['county']
+			location.latitude = loc_vals['latitude']
+			location.longitude = loc_vals['longitude']
+			db.session.commit()
+		except ValueError as e:
+			print e
+			return jsonify({"success":False,"message":"Error: invalid address '%s'"%(address), "status_code":400})
+	else:
+		print "[Info] No location change"
+		return jsonify({"success":True,"message":"location with address already exists, no change made", "status_code":200})
+	return jsonify({"success":True,"message":"successful edit", "status_code":200})
 
 
 

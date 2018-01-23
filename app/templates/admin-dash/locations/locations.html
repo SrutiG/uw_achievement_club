@@ -1,0 +1,46 @@
+<div class="home-locations col-md-12">
+    <div class="home-locations-wrapper">
+        <ul class="list-unstyled locations-list inline">
+            <li class="achievement-club-location locations-stat col-sm-4 text-center">
+                <div class="admin-dash-item locations-list-item">
+                    <div class="admin-dash-item-wrapper num-locations locations-list-item-wrapper">
+                        <h1 class="locations-header">{{ locations|length }}</h1>
+                        <h6 class="locations-sub-header">locations</h6>
+                    </div>
+                </div>
+            </li>
+            <li class="achievement-club-location locations-stat col-sm-4 text-center">
+                <div class="admin-dash-item locations-list-item">
+                    <div class="admin-dash-item-wrapper counties-locations locations-list-item-wrapper">
+                        <h1 class="locations-header">4</h1>
+                        <h6 class="locations-sub-header">counties</h6>
+                    </div>
+                </div>
+            </li>
+            <li class="achievement-club-location locations-stat col-sm-4 text-center">
+                <div class="admin-dash-item locations-list-item">
+                    <div class="admin-dash-item-wrapper counties-states locations-list-item-wrapper">
+                        <h1 class="locations-header">1</h1>
+                        <h6 class="locations-sub-header">state</h6>
+                    </div>
+                </div>
+            </li>
+            {% for location in locations %}
+            {% with location=location %}
+            {% include 'admin-dash/locations/location.html' %}
+            {% endwith %}
+            {% endfor %}
+            <li class="bottom-location-margin col-md-12"></li>
+        </ul>
+        <div class="row form-group admin-dash-input-group add-location">
+            <div class="col-xs-12">
+                <input style="border-right: 0" id="location-name" class="input input-sm admin-dash-input address-input col-xs-5" type="text" placeholder="name" autocomplete="off">
+                <input id="location-address" class="input input-sm admin-dash-input address-input col-xs-6" type="text" placeholder="address (street name, city, zip)" autocomplete="off">
+                <div class="col-xs-1">
+                    <button id="add-location-button" class="btn btn-sm add-location-btn"><span class="glyphicon glyphicon-plus"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'admin-dash/locations/edit_location.html' %}

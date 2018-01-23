@@ -17,6 +17,9 @@
                     <div class="row">
                         <button class="admin-login-button btn btn-lg btn-default col-md-10 col-md-offset-1" type="submit">Submit</button>
                     </div>
+                    {% if error %}
+                    <label class="login-error">Invalid login credentials</label>
+                    {% endif %}
                 </form>
             </div>
         </div>

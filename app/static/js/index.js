@@ -1,3 +1,55 @@
+$(document).ready(function() {
+    $("#admin-logout").click(function() {
+        $.get("/administrator/logout")
+          .done(function( data ) {
+            window.location.href = '/administrator/login';
+        });
+    });
+
+    $("#add-location-button").click(function() {
+        $.post("/administrator/add_location", {'name':$("#location-name").val(), 'address':$("#location-address").val()})
+          .done(function( data ) {
+            if (data.success == true) {
+                location.reload();
+            } else {
+                window.alert(data.message);
+            }
+        }).error(function(error) {
+            window.alert(error.message);
+        });
+    });
+
+    $("#crop-success-button").click(function() {
+        var cropped = $("#show-success-img").cropper('getCroppedCanvas').toDataURL('image/png');
+        $("#cropped-success-img").attr('src', cropped);
+        $("#upload-success-img").show();
+    });
+
+    $("#uploadimg").click(function() {
+        $("#show-success-img").cropper('getCroppedCanvas').toBlob(function (blob) {
+            var formData = new FormData();
+            var fileName = $("#success-photo").val();
+            formData.append('croppedImage', blob);
+            formData.append('filename', fileName);
+            $.ajax('/getImage', {
+                method: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function () {
+                  console.log('Upload success');
+                  $("#success-story-form").submit();
+                },
+                error: function () {
+                  window.alert('Error uploading image');
+                }
+            });
+        });
+    });
+
+
+});
+
 function showLogin() {
     var loginResources = document.getElementById('login-resources');
     var resourcesText = document.getElementById('resources-text');
@@ -48,3 +100,79 @@ function hideDescript(elem) {
         goalDescript.style.display = "";
     }
 }
+
+function editLocation(locationName, address) {
+    if (locationName === undefined && address === undefined) {
+        var oldLocationName = $("#current-location-name").html();
+        jQuery.post("/administrator/edit_location", {'name':$("#edit-location-name").val(), 'address':$("#edit-location-address").val(), 'old-name':oldLocationName})
+              .done(function( data ) {
+                if (data.success == true) {
+                    location.reload();
+                } else {
+                    window.alert(data.message);
+                }
+            }).error(function(error) {
+                window.alert(error.message);
+            });
+    } else {
+        $("#edit-location-modal").modal('show');
+        $("#edit-location-name").val(locationName);
+        $("#edit-location-address").val(address);
+        $("#current-location-name").html(locationName);
+    }
+}
+
+function deleteLocation(locationName) {
+    jQuery.post("/administrator/delete_location", {'name':locationName})
+      .done(function( data ) {
+        if (data.success == true) {
+            location.reload();
+        } else {
+            window.alert(data.message);
+        }
+    }).error(function(error) {
+        window.alert(error.message);
+    });
+}
+
+function readURL(input) {
+    $("#show-success-img").cropper('destroy');
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+        $('#show-success-img').attr('src', e.target.result);
+        $('#show-success-img').cropper({
+          aspectRatio: 10 / 10,
+          scalable: false,
+          zoomOnTouch: false,
+          zoomable:false
+        });
+    }
+        reader.readAsDataURL(input.files[0]);
+        $("#crop-success-button").show();
+    }
+}
+
+function openSuccessModal() {
+    $("#success-photo").val(null);
+    $("#show-success-img").cropper('destroy');
+    $("#show-success-img").attr('src', "#");
+    $("#crop-success-button").hide();
+    $("#cropped-success-img").attr('src', '/static/images/success_story/default_user_img.png');
+    $("#success-first-name").val(null);
+    $("#success-last-name").val(null);
+    $("#success-story-county").val('Fulton');
+    $("#success-story-text").val(null);
+    $("#success-video-link").val(null);
+}
+
+function editSuccessModal(first_name, last_name, image, county, link, text) {
+    $("#success-first-name").val(first_name);
+    $("#success-last-name").val(last_name);
+    $("#success-story-county").val(county);
+    $("#success-story-text").val(text);
+    $("#success-video-link").val(link);
+    $("#cropped-success-img").attr('src', '/static/images/success_story/' + image);
+    $("#success-story-modal").modal('show');
+}
+
