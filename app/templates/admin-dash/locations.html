@@ -1,0 +1,8 @@
+{% extends 'admin-dash/layout.html' %}
+{% block content %}
+
+{% with locations=locations %}
+{% include 'admin-dash/locations/locations.html' %}
+{% endwith %}
+
+{% endblock %}

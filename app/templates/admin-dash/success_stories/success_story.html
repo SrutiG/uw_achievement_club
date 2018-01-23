@@ -1,0 +1,32 @@
+<div class="admin-dash-item col-xl-2 col-md-3 col-xs-4 success-story-item">
+    <div class="admin-dash-item-wrapper success-story-item-wrapper">
+        <div class="success-story-item-content">
+            <div class="fixed-edit-trash">
+                <div class="btn-group edit-delete-story">
+                    <button onclick='editSuccessModal("{{ story.Name }}".split(" ")[0], "{{ story.Name }}".split(" ")[1], "{{ story.Photo }}", "Fulton", "www.youtube.com", "{{ story.Success_Story }}" )' class="btn-sm btn-default story-btn"><span class="glyphicon glyphicon-pencil"></span></button>
+                    <button class="btn-sm btn-default story-btn"><span class="glyphicon glyphicon-trash"></span></button>
+                </div>
+            </div>
+            <div class="success-story-item-center">
+                <div class="col-xs-12 success-story-items success-story-header">
+                    <div class="success-story-items">
+                        <img class="success-story-img" height="50" width="50" src="{{ url_for('static', filename='images/success_story/' + story['Photo']) }}">
+                    </div>
+                    <div class="success-story-items success-story-header-wrapper">
+                        <h4 class="success-story-name">{{ story.Name }}</h4>
+                    </div>
+                </div>
+                <h6 class="story-sub-detail"><span style="width:16%;" class="glyphicon glyphicon-facetime-video"></span>www.youtube.com</h6>
+                <h6 class="story-sub-detail"><span style="width:16%;" class="glyphicon glyphicon-map-marker"></span>Fulton</h6>
+                <div class="success-story-descript col-xs-12 success-story-items">
+                    <div class="col-xs-2 descript-span">
+                        <span class="glyphicon glyphicon-book">&nbsp;</span>
+                    </div>
+                    <div class="col-xs-10 descript-text">
+                        <h6 style="margin-top: 0;">{{ story.Success_Story | truncate(150) }}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

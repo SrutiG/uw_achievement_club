@@ -3,10 +3,11 @@
     <div class="admin-nav">
         <div class="admin-nav-header text-center">
             <img src="{{ url_for('static', filename='images/uw_icon.png') }}">
-            <h4 class="admin-nav-header-text"><span class="uw_lighter">Welcome, </span><strong>admin123</strong>!</h4>
+            <h4 class="admin-nav-header-text"><span class="uw_lighter">Welcome, </span><strong>{{ username }}</strong>!</h4>
+            <h6><a id="admin-logout">Logout</a></h6>
         </div>
-        <div class="admin-nav-item">
-            <a class="admin-nav-link .active" href="#">
+        <div class="admin-nav-item active">
+            <a class="admin-nav-link" href="{{ url_for('administrator_home') }}">
                 <div class="row admin-nav-row">
                     <span class="glyphicon glyphicon-home admin-nav-icon"></span><h5 class="admin-nav-text">Home</h5>
                 </div>
@@ -37,6 +38,20 @@
             <a class="admin-nav-link" href="#">
                 <div class="row admin-nav-row">
                     <span class="glyphicon glyphicon-user admin-nav-icon"></span><h5 class="admin-nav-text">Members</h5>
+                </div>
+            </a>
+        </div>
+        <div class="admin-nav-item">
+            <a class="admin-nav-link" href="{{ url_for('administrator_locations') }}">
+                <div class="row admin-nav-row">
+                    <span class="glyphicon glyphicon-map-marker admin-nav-icon"></span><h5 class="admin-nav-text">Locations</h5>
+                </div>
+            </a>
+        </div>
+        <div class="admin-nav-item">
+            <a class="admin-nav-link" href="{{ url_for('administrator_success_stories') }}">
+                <div class="row admin-nav-row">
+                    <span class="glyphicon glyphicon-star admin-nav-icon"></span><h5 class="admin-nav-text">Success Stories</h5>
                 </div>
             </a>
         </div>

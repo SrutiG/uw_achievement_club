@@ -1,0 +1,17 @@
+<li class="achievement-club-location col-sm-12 col-md-6">
+    <div class="admin-dash-item locations-list-item">
+        <div class="admin-dash-item-wrapper locations-list-item-wrapper">
+            <div class="location-left">
+                <h4>{{ location.name }}</h4>
+                <h5 class="uw_lighter">{{ location.county }} County</h5>
+                <h6 class="uw_lighter"><span class="glyphicon glyphicon-map-marker"></span> {{ location.address }}</h6>
+            </div>
+            <div class="location-right">
+                <div class="btn-group edit-delete-location">
+                    <button id="{{ location.name }}-edit" onclick='editLocation("{{location.name}}", "{{location.address}}")' class="btn-sm btn-default location-btn edit-location"><span class="glyphicon glyphicon-pencil"></span></button>
+                    <button id="{{ location.name }}-delete" onclick='deleteLocation("{{location.name}}")' class="btn-sm btn-default location-btn edit-location"><span class="glyphicon glyphicon-trash"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
